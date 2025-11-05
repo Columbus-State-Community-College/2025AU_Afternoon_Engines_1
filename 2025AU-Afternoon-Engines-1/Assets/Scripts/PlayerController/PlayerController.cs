@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float currentStamina;
     public float staminaLoss = 5;
     public float staminaRegenRate = 5;
-    private bool currentlyRunning = false;
+    // private bool currentlyRunning = false;
     private bool exhausted = false;
      //for switching speed
     // Start is called once before the first execution of Update after the MonoBehaviour is created
