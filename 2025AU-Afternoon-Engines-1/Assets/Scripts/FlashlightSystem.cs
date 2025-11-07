@@ -12,6 +12,7 @@ public class FlashlightSystem : MonoBehaviour
     public float minIntensity = 50f;
 
     public Light flashlight;
+    public MeshCollider coneCollider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
