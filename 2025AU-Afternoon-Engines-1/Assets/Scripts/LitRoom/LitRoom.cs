@@ -4,11 +4,11 @@ public class LitRoom : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) EnemyController.PlayerInLitRoom = true;
+        if (other.CompareTag("Player")) EnemyController.isInLightZone = true;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) EnemyController.PlayerInLitRoom = false;
+        if (other.CompareTag("Player")) EnemyController.isInLightZone = false;
     }
 }

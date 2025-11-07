@@ -4,9 +4,9 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     private Transform player;
-    private NavMeshAgent agent;
+    public static NavMeshAgent agent;
 
-    private bool isInLightZone = false;
+    public static bool isInLightZone = false;
 
     void Awake()
     {
@@ -43,19 +43,22 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("LightZ"))
+        if (other.CompareTag("LightZ") || other.CompareTag("Flashlight"))
         {
             isInLightZone = true;
             Debug.Log("[ENEMY] Entered light zone — stopping.");
         }
     }
 
+  
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("LightZ"))
+        if (other.CompareTag("LightZ") || other.CompareTag("Flashlight"))
         {
             isInLightZone = false;
             Debug.Log("[ENEMY] Exited light zone — resuming chase.");
         }
+
     }
 }
