@@ -8,6 +8,9 @@ public class FlashlightSystem : MonoBehaviour
     public float FlashlightTotalPwr = 100f;
     public float FlashlightDrainRate = 10f;
     private float FlashlightPwr;
+    public Vector3 normalScale = new Vector3(1f, 1f, 1f);
+    public Vector3  hiddenScale = new Vector3(0f, 0f, 0f);
+    private bool isShowing = false;
 
     public float flashlightIntensity = 1000f; //change when lighting is set
     public float minIntensity = 50f;
@@ -23,23 +26,26 @@ public class FlashlightSystem : MonoBehaviour
         flashlight.enabled = false;
         FlashlightRunning = false;
         isFlashlightWorking = true;
-        coneCollider.SetActive(false);
+        coneCollider.gameObject.transform.localScale = hiddenScale;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && isFlashlightWorking)
-        { 
-            if(coneCollider.activeInHierarchy == false)
+        {
+          if(isShowing)
             {
-                   coneCollider.SetActive(true);
+                coneCollider.gameObject.transform.localScale = hiddenScale;
             }
-            else
+
+          else
             {
-                coneCollider.SetActive(false);
+                coneCollider.gameObject.transform.localScale = normalScale;
             }
-           flashlight.enabled = !flashlight.enabled;
+
+            isShowing = !isShowing;
+            flashlight.enabled = !flashlight.enabled;
             
            FlashlightRunning = flashlight.enabled;
 
