@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FlashlightCollision : MonoBehaviour
+public class FlashlightColllision : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,24 +14,23 @@ public class FlashlightCollision : MonoBehaviour
         
     }
 
-
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Enemy"))
         {
-            EnemyController.agent.isStopped = true;
-        }
+            Debug.Log("Entered flashlight range");
+            EnemyController.agent.speed = 0;
+
+        } 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            EnemyController.agent.isStopped = false;
-        }
+            Debug.Log("Exited flashlight range");
+            EnemyController.agent.speed = 4;
 
+        }
     }
 }
-
-

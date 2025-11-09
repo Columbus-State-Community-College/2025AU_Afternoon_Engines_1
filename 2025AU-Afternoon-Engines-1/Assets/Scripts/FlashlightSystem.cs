@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class FlashlightSystem : MonoBehaviour
@@ -12,7 +13,8 @@ public class FlashlightSystem : MonoBehaviour
     public float minIntensity = 50f;
 
     public Light flashlight;
-    public MeshCollider coneCollider;
+    public GameObject coneCollider;
+    public TextMeshProUGUI flashlightPWRtext;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +23,7 @@ public class FlashlightSystem : MonoBehaviour
         flashlight.enabled = false;
         FlashlightRunning = false;
         isFlashlightWorking = true;
+        coneCollider.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,8 +31,17 @@ public class FlashlightSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && isFlashlightWorking)
         { 
-            flashlight.enabled = !flashlight.enabled;
-            FlashlightRunning = flashlight.enabled;
+            if(coneCollider.activeInHierarchy == false)
+            {
+                   coneCollider.SetActive(true);
+            }
+            else
+            {
+                coneCollider.SetActive(false);
+            }
+           flashlight.enabled = !flashlight.enabled;
+            
+           FlashlightRunning = flashlight.enabled;
 
 
         
@@ -41,6 +53,7 @@ public class FlashlightSystem : MonoBehaviour
         {
             flashlight.intensity -= FlashlightDrainRate * Time.deltaTime;
             Debug.Log("draining power");
+            UpdateFlashlightUI();
         }
 
         if (flashlight.intensity <= minIntensity)
@@ -53,6 +66,12 @@ public class FlashlightSystem : MonoBehaviour
 
            
  
+    }
+
+
+    private void UpdateFlashlightUI()
+    {
+        flashlightPWRtext.text = "Power: " + Mathf.FloorToInt(flashlight.intensity).ToString() + "%";
     }
 
 

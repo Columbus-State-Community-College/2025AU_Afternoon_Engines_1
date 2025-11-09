@@ -51,21 +51,13 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Flashlight"))
-        {
-            Debug.Log("trigger hit");
-            isInLightZone = true;
-            Debug.Log("[ENEMY] Entered light zone — stopping.");
-        }
-    }
+   
 
 
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("LightZ") || other.CompareTag("Flashlight"))
+        if (other.CompareTag("LightZ"))
         {
             Debug.Log("Left trigger");
             isInLightZone = false;
