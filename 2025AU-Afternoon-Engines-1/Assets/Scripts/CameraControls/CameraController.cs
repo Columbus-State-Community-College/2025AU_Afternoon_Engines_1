@@ -5,6 +5,7 @@ public class CameraController : MonoBehaviour
     public Transform Player;
     public float mouseSensitivity = 5.0f;
     float verticalRotation = 0f; 
+    UIManager UIManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +14,17 @@ public class CameraController : MonoBehaviour
 
     // Update is called once per frame
     void Update() 
+    {
+        // Disable mouse look if a menu is open
+        if (UIManager.isMenuOpen == true)
+        {
+            return;
+        } else {
+            MouseLook();
+        }
+            
+    }
+    public void MouseLook()
     {
         float x = Input.GetAxis("Mouse X") * mouseSensitivity;
         float y = Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -24,7 +36,5 @@ public class CameraController : MonoBehaviour
 
         //horizontal rotation
         Player.Rotate(Vector3.up * x);
-
-
     }
 }

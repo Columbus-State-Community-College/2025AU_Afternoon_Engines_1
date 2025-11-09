@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2550618698720424004}
   m_Layer: 0
   m_Name: FirstPersonCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2571031710666335429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.27, z: 0}
+  m_LocalPosition: {x: 0, y: 1.27, z: 0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 3509139292605274357}
   - component: {fileID: 1546395146405087890}
   - component: {fileID: 6950245846953757389}
+  - component: {fileID: 8635549491696526505}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -444,11 +445,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7746263374d0814989c41da76140618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 0}
+  inventoryManager: {fileID: 0}
   walkSpeed: 10
   runSpeed: 30
   maxStamina: 100
   staminaLoss: 20
   staminaRegenRate: 5
+--- !u!114 &8635549491696526505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741495105336830980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff930fe88f7c77479d367ced2caa27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  mask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1001 &668138034087785264
 PrefabInstance:
   m_ObjectHideFlags: 0

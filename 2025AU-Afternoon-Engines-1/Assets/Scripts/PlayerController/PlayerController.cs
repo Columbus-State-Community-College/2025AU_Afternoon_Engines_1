@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
 
     CharacterController characterController;
+
+    public UIManager uiManager;
+
     [Header("Speeds")]
     public float walkSpeed = 5.0f;
     public float runSpeed = 15.0f;
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+
         currentStamina = maxStamina;
     }
 
@@ -64,13 +68,15 @@ public class PlayerController : MonoBehaviour
             Application.Quit();
         }
 
+        // E to open Inventory
+        if (Input.GetKey(KeyCode.E))
+        {
+            InventoryManager.Instance.ListItems();
+            uiManager.ShowInventoryMenu();
+        }
 
 
-
-
-
-
-            float x = Input.GetAxis("Horizontal");
+        float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
         Vector3 moveDirection = transform.right * x + transform.forward * y;

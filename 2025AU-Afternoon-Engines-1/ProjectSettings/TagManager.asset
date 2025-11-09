@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Enemy
   - Flashlight
+  - LightZ
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
   - Ground
