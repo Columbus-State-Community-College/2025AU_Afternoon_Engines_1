@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     CharacterController characterController;
 
     public UIManager uiManager;
+    public Slider staminaBar;
+    
 
     [Header("Speeds")]
     public float walkSpeed = 5.0f;
@@ -28,6 +31,8 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         currentStamina = maxStamina;
+        staminaBar.maxValue = maxStamina;
+        UpdateStaminaBar();
     }
 
     // Update is called once per frame
@@ -40,6 +45,7 @@ public class PlayerController : MonoBehaviour
                 currentSpeed = runSpeed;
                 currentStamina -= staminaLoss * Time.deltaTime;
                 Debug.Log("running");
+                UpdateStaminaBar();
             }
             else
             {
@@ -55,6 +61,7 @@ public class PlayerController : MonoBehaviour
             {
                 currentStamina += staminaRegenRate * Time.deltaTime;
                 Debug.Log("regen");
+                UpdateStaminaBar();
             }
             else
             {
@@ -82,5 +89,10 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = transform.right * x + transform.forward * y;
 
         characterController.Move(moveDirection * currentSpeed * Time.deltaTime);
+    }
+
+    void UpdateStaminaBar()
+    {
+        staminaBar.value = currentStamina;
     }
 }

@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6950245846953757389, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: staminaBar
+      value: 
+      objectReference: {fileID: 1324564805}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -508,6 +512,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1324564805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7843942677910947821, guid: 3864f1e321c242b46a83b6280f678411, type: 3}
+  m_PrefabInstance: {fileID: 1845047864939578476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2093130413 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1788732293283264264, guid: 4973da6e8555aa841b99066e19f9a4bd, type: 3}
@@ -631,6 +646,14 @@ PrefabInstance:
     - target: {fileID: 4800665839224050929, guid: 3864f1e321c242b46a83b6280f678411, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980604190750541778, guid: 3864f1e321c242b46a83b6280f678411, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078989037632546284, guid: 3864f1e321c242b46a83b6280f678411, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
