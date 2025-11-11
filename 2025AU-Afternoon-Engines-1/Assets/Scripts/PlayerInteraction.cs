@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
 
         // Debug for testing ray
-        Debug.DrawRay(ray.origin, ray.direction * distance);
+        //Debug.DrawRay(ray.origin, ray.direction * distance);
 
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, distance, mask))
