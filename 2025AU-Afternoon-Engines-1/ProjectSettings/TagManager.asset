@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Flashlight
   - LightZ
+  - AudioManager
   layers:
   - Default
   - TransparentFX

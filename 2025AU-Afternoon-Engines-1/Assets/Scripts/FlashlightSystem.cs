@@ -18,7 +18,13 @@ public class FlashlightSystem : MonoBehaviour
     public Light flashlight;
     public GameObject coneCollider;
     public TextMeshProUGUI flashlightPWRtext;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    AudioManager SFX;
+
+
+    private void Awake()
+    {
+        SFX = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();  
+    }
     void Start()
     {
         flashlight = GetComponent<Light>();
@@ -34,6 +40,7 @@ public class FlashlightSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && isFlashlightWorking)
         {
+            SFX.PlaySFX(SFX.flashlightSFX);
           if(isShowing)
             {
                 coneCollider.gameObject.transform.localScale = hiddenScale;
