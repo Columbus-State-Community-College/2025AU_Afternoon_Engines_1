@@ -18,7 +18,6 @@ public class FlashlightSystem : MonoBehaviour
     public Light flashlight;
     public GameObject coneCollider;
     public TextMeshProUGUI flashlightPWRtext;
-    public GameObject dialougeText;
     AudioManager SFX;
 
 
@@ -39,37 +38,28 @@ public class FlashlightSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dialougeText.activeInHierarchy)
-        {
-            isFlashlightWorking = false;
-        }
-        else
-        {
-            isFlashlightWorking= true;
-        }
-
         if (Input.GetKeyDown(KeyCode.F) && isFlashlightWorking)
         {
             SFX.PlaySFX(SFX.flashlightSFX);
-            if (isShowing)
+          if(isShowing)
             {
                 coneCollider.gameObject.transform.localScale = hiddenScale;
             }
 
-            else
+          else
             {
                 coneCollider.gameObject.transform.localScale = normalScale;
             }
 
             isShowing = !isShowing;
             flashlight.enabled = !flashlight.enabled;
-
-            FlashlightRunning = flashlight.enabled;
-
-
+            
+           FlashlightRunning = flashlight.enabled;
 
 
-
+        
+        
+        
         }
 
         if (FlashlightRunning && flashlight.intensity > minIntensity)

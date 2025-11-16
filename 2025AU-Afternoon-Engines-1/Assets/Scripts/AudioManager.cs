@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
     [Header("SFX")]
      
     public AudioClip flashlightSFX;
-    public AudioClip dialougeClick;
 
 
     private void Start()
