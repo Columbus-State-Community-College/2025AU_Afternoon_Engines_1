@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,13 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 5.0f;
     public float runSpeed = 15.0f;
     private float currentSpeed;
+
+    [Header("Memory Text")]
+    public TextMeshProUGUI memory1;
+    public TextMeshProUGUI memory2;
+    public TextMeshProUGUI memory3;
+    public TextMeshProUGUI memory4;
+    public TextMeshProUGUI memory5;
 
     [Header("Stamina System")]
     public float maxStamina = 20;
@@ -94,5 +102,52 @@ public class PlayerController : MonoBehaviour
     void UpdateStaminaBar()
     {
         staminaBar.value = currentStamina;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Memory1"))
+        {
+           memory1.gameObject.SetActive(true);
+           memory2.gameObject.SetActive(false);
+            memory3.gameObject.SetActive(false);
+            memory4.gameObject.SetActive(false);
+            memory5.gameObject.SetActive(false);
+        }
+        if (other.CompareTag("Memory2"))
+        {
+            memory2.gameObject.SetActive(true);
+            memory3.gameObject.SetActive(false);
+            memory4.gameObject.SetActive(false);
+            memory5.gameObject.SetActive(false);
+            memory1.gameObject.SetActive(false);
+        }
+
+        if (other.CompareTag("Memory3"))
+        {
+            memory2.gameObject.SetActive(false);
+            memory3.gameObject.SetActive(true);
+            memory4.gameObject.SetActive(false);
+            memory5.gameObject.SetActive(false);
+            memory1.gameObject.SetActive(false);
+        }
+
+        if (other.CompareTag("Memory4"))
+        {
+            memory2.gameObject.SetActive(false);
+            memory3.gameObject.SetActive(false);
+            memory4.gameObject.SetActive(true);
+            memory5.gameObject.SetActive(false);
+            memory1.gameObject.SetActive(false);
+        }
+
+        if (other.CompareTag("Memory5"))
+        {
+            memory2.gameObject.SetActive(false);
+            memory3.gameObject.SetActive(false);
+            memory4.gameObject.SetActive(false);
+            memory5.gameObject.SetActive(true);
+            memory1.gameObject.SetActive(false);
+        }
     }
 }

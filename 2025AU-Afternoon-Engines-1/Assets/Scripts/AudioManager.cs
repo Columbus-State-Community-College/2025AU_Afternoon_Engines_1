@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
      
     public AudioClip flashlightSFX;
     public AudioClip dialougeClick;
+    public AudioClip memoryPage;
 
 
     private void Start()
