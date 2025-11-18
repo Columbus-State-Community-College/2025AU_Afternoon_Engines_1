@@ -19,7 +19,7 @@ public class DialougeSystem : MonoBehaviour
     }
     void Start()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         dialougeText.text = string.Empty;
         StartDialouge();
     }

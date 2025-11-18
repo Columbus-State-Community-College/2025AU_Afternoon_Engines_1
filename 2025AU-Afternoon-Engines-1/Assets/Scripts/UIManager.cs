@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject[] menus;
 
-    public string menuScene;
+    public string menuScene = "MainMenu";
     
     public void ShowMenu(int menuIndex)
     {
@@ -30,8 +30,9 @@ public class UIManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        HideMenu(1);
         ShowCursor();
-        SceneManager.LoadScene(menuScene);
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void ShowCursor()
