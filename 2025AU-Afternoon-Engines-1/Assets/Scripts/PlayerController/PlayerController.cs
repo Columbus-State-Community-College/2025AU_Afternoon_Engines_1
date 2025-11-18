@@ -77,17 +77,17 @@ public class PlayerController : MonoBehaviour
                 exhausted = false;
             }
         }
-
+        // open pause menu
         if (Input.GetKey(KeyCode.Escape)) {
 
-            Application.Quit();
+            uiManager.ShowMenu(1);
         }
 
         // E to open Inventory
         if (Input.GetKey(KeyCode.E))
         {
             InventoryManager.Instance.ListItems();
-            uiManager.ShowInventoryMenu();
+            uiManager.ShowMenu(0);
         }
 
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -6,24 +7,38 @@ public class UIManager : MonoBehaviour
     // Set isMenuOpen to true or false, static so it can be widely used
     public static bool isMenuOpen;
 
-    public GameObject inventoryMenu;
+    public GameObject[] menus;
+
+    public string menuScene;
     
-    public void ShowInventoryMenu()
+    public void ShowMenu(int menuIndex)
     {
-        inventoryMenu.SetActive(true);
+        menus[menuIndex].SetActive(true);
         isMenuOpen = true;
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
 
     }
 
-    public void HideInventoryMenu()
+    public void HideMenu(int menuIndex)
     {
-        inventoryMenu.SetActive(false);
+        menus[menuIndex].SetActive(false);
         isMenuOpen = false;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-   
+    public void ReturnToMainMenu()
+    {
+        ShowCursor();
+        SceneManager.LoadScene(menuScene);
+    }
+
+    private void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
 }
+
