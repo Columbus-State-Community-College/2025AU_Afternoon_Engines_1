@@ -34,7 +34,13 @@ public class PlayerController : MonoBehaviour
     public float staminaRegenRate = 5;
     // private bool currentlyRunning = false;
     private bool exhausted = false;
-     //for switching speed
+
+    //Gravity
+    private float gravity = -9.81f;
+    [SerializeField] private float gravityMultiplier = 3.0f;
+    private Vector3 verticalVelocity;
+
+    //for switching speed
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -104,6 +110,24 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = transform.right * x + transform.forward * y;
 
         characterController.Move(moveDirection * currentSpeed * Time.deltaTime);
+
+        ApplyGravity();
+    }
+
+    private void ApplyGravity()
+    {
+        if (characterController.isGrounded)
+        {
+            if (verticalVelocity.y < 0)
+                verticalVelocity.y = -2f;
+        }
+        else
+        {
+            verticalVelocity.y += gravity * gravityMultiplier * Time.deltaTime;
+        }
+
+        characterController.Move(verticalVelocity * Time.deltaTime);
+
     }
 
     void UpdateStaminaBar()
