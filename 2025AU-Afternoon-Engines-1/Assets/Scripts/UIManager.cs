@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject[] menus;
 
+    public GameObject memoryCanvas;
+
     public string menuScene = "MainMenu";
     
     public void ShowMenu(int menuIndex)

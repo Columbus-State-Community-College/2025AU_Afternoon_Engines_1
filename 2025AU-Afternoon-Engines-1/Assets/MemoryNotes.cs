@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MemoryNotes : MonoBehaviour
 {
+
+    public MemoryManager memoryManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -9,11 +11,5 @@ public class MemoryNotes : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetMouseButton(0))
-        {
-            gameObject.SetActive(false);
-        }
-    }
+
 }

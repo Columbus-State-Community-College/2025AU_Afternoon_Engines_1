@@ -1,0 +1,85 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+
+public class MemoryManager : MonoBehaviour
+{
+    [Header("Memory UI")]
+    public GameObject memoryPanel;
+    public List<GameObject> memoryPages;
+    public GameObject memButtons;
+
+    private List<int> collectedIndexes = new List<int>();
+    private List<GameObject> activeMemories = new List<GameObject>();
+    private int currentIndex = 0;
+
+
+    public void CollectMemory(GameObject memoryPage)
+    {
+        int index = memoryPages.IndexOf(memoryPage);
+        if (index == -1) return;
+
+
+        if (!collectedIndexes.Contains(index))
+            collectedIndexes.Add(index);
+
+        memoryPanel.SetActive(true);
+        memoryPage.SetActive(true);
+    }
+
+
+    public void ClosePopup()
+    {
+        memoryPanel.SetActive(false);
+
+
+        foreach (GameObject mem in memoryPages)
+            mem.SetActive(false);
+    }
+
+    public void OpenMemoryPanel()
+    {
+        memoryPanel.SetActive(true);
+        memButtons.SetActive(true);
+
+        activeMemories.Clear();
+        foreach (int i in collectedIndexes)
+        {
+            memoryPages[i].SetActive(false);
+            activeMemories.Add(memoryPages[i]);
+        }
+
+        if (activeMemories.Count > 0)
+        {
+            currentIndex = 0;
+            activeMemories[currentIndex].SetActive(true);
+        }
+    }
+
+    public void CloseMemoryPanel()
+    {
+        memoryPanel.SetActive(false);
+        memButtons.SetActive(false);
+
+        if (activeMemories.Count > 0)
+            activeMemories[currentIndex].SetActive(false);
+    }
+
+    public void NextMemory()
+    {
+        if (activeMemories.Count == 0) return;
+
+        activeMemories[currentIndex].SetActive(false);
+        currentIndex = (currentIndex + 1) % activeMemories.Count;
+        activeMemories[currentIndex].SetActive(true);
+    }
+
+    public void PreviousMemory()
+    {
+        if (activeMemories.Count == 0) return;
+
+        activeMemories[currentIndex].SetActive(false);
+        currentIndex = (currentIndex - 1 + activeMemories.Count) % activeMemories.Count;
+        activeMemories[currentIndex].SetActive(true);
+    }
+}
