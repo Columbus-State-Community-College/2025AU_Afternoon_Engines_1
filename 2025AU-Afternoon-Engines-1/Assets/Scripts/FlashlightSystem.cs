@@ -97,6 +97,28 @@ public class FlashlightSystem : MonoBehaviour
         flashlightPWRtext.text = "Power: " + Mathf.FloorToInt(flashlight.intensity).ToString() + "%";
     }
 
+    // for battery usage in the inventory system
+
+    public void restoreCharge(float charge)
+    {
+        //charge can be 50 or 75
+
+        flashlight.intensity += charge;
+
+        if (flashlight.intensity < flashlightIntensity)
+        {
+            // prevent from going over the maximum amount
+            flashlight.intensity = flashlightIntensity;
+
+            if(flashlight.intensity > minIntensity)
+            {   // have the flashlight work 
+                isFlashlightWorking = true;
+            }
+
+        }
+
+    }
+
 
 }
 

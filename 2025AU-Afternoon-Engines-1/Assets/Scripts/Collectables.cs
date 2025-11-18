@@ -58,6 +58,7 @@ public class Collectable : MonoBehaviour
     {
         memoryNotes.SetActive(true);
         SFX.PlaySFX(SFX.memoryPage);
+      
 
 
     }

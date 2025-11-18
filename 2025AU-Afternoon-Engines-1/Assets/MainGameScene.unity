@@ -4706,7 +4706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de14f7b607f7f09489854ca4e22b1d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryManager: {fileID: 0}
+  memoryManager: {fileID: 1095666266}
 --- !u!1 &1786295225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,7 +4739,7 @@ MonoBehaviour:
   menus:
   - {fileID: 1801159844}
   - {fileID: 110252487}
-  memoryCanvas: {fileID: 0}
+  memoryCanvas: {fileID: 1712328617}
   menuScene: 
 --- !u!4 &1786295227
 Transform:
@@ -5722,6 +5722,10 @@ PrefabInstance:
       propertyPath: memoryPage
       value: 
       objectReference: {fileID: 8300000, guid: efa50f489988ffb4bb7ceeb548aa4e9f, type: 3}
+    - target: {fileID: 3137730240115440409, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2381726349968934725, guid: 715a245f431d51c4599689868a0237e5, type: 2}
     - target: {fileID: 7900370772713696470, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 472.19995
