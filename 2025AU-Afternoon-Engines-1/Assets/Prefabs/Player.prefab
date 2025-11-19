@@ -297,6 +297,7 @@ MonoBehaviour:
   flashlight: {fileID: 3571244962531497367}
   coneCollider: {fileID: 5816655433093414489}
   flashlightPWRtext: {fileID: 0}
+  dialougeText: {fileID: 0}
 --- !u!1 &6741495105336830980
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,11 +452,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 0}
   staminaBar: {fileID: 0}
+  memoryManager: {fileID: 0}
   walkSpeed: 10
   runSpeed: 30
+  memoryPanel: {fileID: 0}
+  memory1: {fileID: 0}
+  memory2: {fileID: 0}
+  memory3: {fileID: 0}
+  memory4: {fileID: 0}
+  memory5: {fileID: 0}
   maxStamina: 100
   staminaLoss: 20
   staminaRegenRate: 5
+  gravityMultiplier: 3
 --- !u!114 &8635549491696526505
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -49,6 +49,15 @@ public class EnemyController : MonoBehaviour
             isInLightZone = true;
             Debug.Log("[ENEMY] Entered light zone — stopping.");
         }
+
+        if (other.CompareTag("Player"))
+        {
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.TakeDamage(5f);
+            }
+        }
     }
 
    

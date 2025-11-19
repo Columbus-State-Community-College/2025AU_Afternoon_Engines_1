@@ -13,8 +13,15 @@ public class MemoryManager : MonoBehaviour
     private List<int> collectedIndexes = new List<int>();
     private List<GameObject> activeMemories = new List<GameObject>();
     private int currentIndex = 0;
+    private bool popupClosed = false;
+    
+    [Header("Win Screen")]
+    public GameObject winScreen;
 
-
+    private void Update()
+    {
+        CheckForWin();
+    }
     public void CollectMemory(GameObject memoryPage)
     {
         int index = memoryPages.IndexOf(memoryPage);
@@ -27,6 +34,7 @@ public class MemoryManager : MonoBehaviour
         memoryPanel.SetActive(true);
         memoryPage.SetActive(true);
         exitMemoryText.SetActive(true);
+        popupClosed = false;
     }
 
 
@@ -38,6 +46,8 @@ public class MemoryManager : MonoBehaviour
 
         foreach (GameObject mem in memoryPages)
             mem.SetActive(false);
+
+        popupClosed = true;
     }
 
     public void OpenMemoryPanel()
@@ -84,5 +94,18 @@ public class MemoryManager : MonoBehaviour
         activeMemories[currentIndex].SetActive(false);
         currentIndex = (currentIndex - 1 + activeMemories.Count) % activeMemories.Count;
         activeMemories[currentIndex].SetActive(true);
+    }
+
+    private void CheckForWin()
+    {
+        if (memoryPages.Count == collectedIndexes.Count)
+        {
+            if (popupClosed)
+            {
+                winScreen.SetActive(true);
+                Time.timeScale = 0f;
+                Cursor.lockState = CursorLockMode.None;
+            }
+        }
     }
 }

@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject memoryCanvas;
 
+    public GameObject deathScreen;
+
     public string menuScene = "MainMenu";
     
     public void ShowMenu(int menuIndex)
@@ -41,6 +43,13 @@ public class UIManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    public void ShowDeathScreen()
+    {
+        deathScreen.SetActive(true);
+        Time.timeScale = 0f;
+        ShowCursor();
     }
 
 }

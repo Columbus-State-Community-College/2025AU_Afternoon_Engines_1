@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravityMultiplier = 3.0f;
     private Vector3 verticalVelocity;
 
+    public float maxHealth = 100;
+    public float currentHealth;
+
     //for switching speed
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,6 +52,9 @@ public class PlayerController : MonoBehaviour
         currentStamina = maxStamina;
         staminaBar.maxValue = maxStamina;
         UpdateStaminaBar();
+
+        currentHealth = maxHealth;
+
     }
 
     // Update is called once per frame
@@ -152,6 +158,20 @@ public class PlayerController : MonoBehaviour
 
         else if (other.CompareTag("Memory5"))
             memoryManager.CollectMemory(memory5);
+    }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+            Die();
+    }
+
+    private void Die()
+    {
+        uiManager.ShowDeathScreen();
+        
     }
 
 }
