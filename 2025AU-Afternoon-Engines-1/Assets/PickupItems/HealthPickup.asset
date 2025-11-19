@@ -16,4 +16,5 @@ MonoBehaviour:
   itemName: Health
   itemDescription: 
   value: 20
+  useType: 2
   icon: {fileID: 0}

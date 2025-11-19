@@ -7,9 +7,17 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
 
+    public UseItems useItems;
+
     // Content from UI and item prefab to set name and image
     public Transform ItemContent;
     public GameObject InventoryItem;
+
+    public GameObject useItemPanel;
+    public Button useButton;
+    public Button cancelButton;
+
+    private Item selectedItem;
 
     private void Awake()
     {
@@ -39,6 +47,36 @@ public class InventoryManager : MonoBehaviour
 
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
+
+            obj.GetComponent<InventoryItemUI>().SetItem(item);
         }
+    }
+
+    public void OpenUseMenu(Item item)
+    {
+        selectedItem = item;
+        useItemPanel.SetActive(true);
+
+    }
+
+    public void UseSelectedItem()
+    {
+        Debug.Log("Using item: " + selectedItem.itemName);
+
+        useItems.UseItem(selectedItem);
+
+        Remove(selectedItem);
+
+        selectedItem = null;
+
+        useItemPanel.SetActive(false);
+    }
+
+    public void Remove(Item item)
+    {
+        if (Items.Contains(item))
+            Items.Remove(item);
+
+        ListItems();
     }
 }

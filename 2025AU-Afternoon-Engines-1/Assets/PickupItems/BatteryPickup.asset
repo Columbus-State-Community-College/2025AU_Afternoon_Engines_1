@@ -15,5 +15,6 @@ MonoBehaviour:
   id: 1
   itemName: Battery
   itemDescription: 
-  value: 10
+  value: 50
+  useType: 1
   icon: {fileID: 0}

@@ -105,7 +105,7 @@ public class FlashlightSystem : MonoBehaviour
 
         flashlight.intensity += charge;
 
-        if (flashlight.intensity < flashlightIntensity)
+        if (flashlight.intensity > flashlightIntensity)
         {
             // prevent from going over the maximum amount
             flashlight.intensity = flashlightIntensity;
@@ -116,6 +116,8 @@ public class FlashlightSystem : MonoBehaviour
             }
 
         }
+
+        UpdateFlashlightUI();
 
     }
 
