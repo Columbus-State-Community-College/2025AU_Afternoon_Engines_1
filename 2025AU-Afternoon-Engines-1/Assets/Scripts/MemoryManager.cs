@@ -8,6 +8,7 @@ public class MemoryManager : MonoBehaviour
     public GameObject memoryPanel;
     public List<GameObject> memoryPages;
     public GameObject memButtons;
+    public GameObject exitMemoryText;
 
     private List<int> collectedIndexes = new List<int>();
     private List<GameObject> activeMemories = new List<GameObject>();
@@ -25,12 +26,14 @@ public class MemoryManager : MonoBehaviour
 
         memoryPanel.SetActive(true);
         memoryPage.SetActive(true);
+        exitMemoryText.SetActive(true);
     }
 
 
     public void ClosePopup()
     {
         memoryPanel.SetActive(false);
+        exitMemoryText.SetActive(false);
 
 
         foreach (GameObject mem in memoryPages)
