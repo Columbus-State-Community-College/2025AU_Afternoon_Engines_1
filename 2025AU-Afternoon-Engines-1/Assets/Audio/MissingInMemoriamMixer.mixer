@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!243 &-8516669057892558304
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Jumpscare SFX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 1b7b4d5b9a7241949ac9c9bad9e2a037
+  m_Children: []
+  m_Volume: d3c35c5466a8cfc4e91875b1292898b0
+  m_Pitch: f65caa2ddf5a8f647bcae4c39ddfc8a0
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4635274258799088067}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-5816308196172197030
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -19,6 +38,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-4635274258799088067
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 07331338a21509b42b1ec3b689d3dda3
+  m_EffectName: Attenuation
+  m_MixLevel: 47a40b4b0476db440b2e81ccd6d98249
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-3974535183148306883
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -42,8 +75,7 @@ AudioMixerGroupController:
   m_Name: Ambience
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 66bb141aff9bf804badf8ab9735b1336
-  m_Children:
-  - {fileID: -5816308196172197030}
+  m_Children: []
   m_Volume: 8c6fe8c1a697b68498b020918370b63b
   m_Pitch: 3a70afee27fc07f44a963f385c28e3b0
   m_Send: 00000000000000000000000000000000
@@ -68,12 +100,19 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 8c6fe8c1a697b68498b020918370b63b
+    name: Ambience
+  - guid: d3c35c5466a8cfc4e91875b1292898b0
+    name: Jumpscare
+  - guid: 27277f3067f1e9e46bacbbe55134531b
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - 6e933649921567e4d97d0bd5cf6b221c
     - 66bb141aff9bf804badf8ab9735b1336
     - 966201ccac4adef44b415b66773d42e5
+    - 1b7b4d5b9a7241949ac9c9bad9e2a037
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -87,7 +126,9 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 6e933649921567e4d97d0bd5cf6b221c
   m_Children:
+  - {fileID: -5816308196172197030}
   - {fileID: -2381726349968934725}
+  - {fileID: -8516669057892558304}
   m_Volume: 133f71c7436b6914897be4846b278037
   m_Pitch: 921c0a8f69ae6ed48bf808e84f8da137
   m_Send: 00000000000000000000000000000000

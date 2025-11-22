@@ -42,11 +42,13 @@ public class PlayerController : MonoBehaviour
 
     public float maxHealth = 100;
     public float currentHealth;
+    AudioManager SFX;
 
     //for switching speed
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        SFX = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         characterController = GetComponent<CharacterController>();
 
         currentStamina = maxStamina;
@@ -158,6 +160,9 @@ public class PlayerController : MonoBehaviour
 
         else if (other.CompareTag("Memory5"))
             memoryManager.CollectMemory(memory5);
+
+
+       
     }
 
     public void TakeDamage(float amount)
