@@ -13,6 +13,7 @@ public class DialougeSystem : MonoBehaviour
     AudioManager SFX;
 
 
+
     private void Awake()
     {
         SFX = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
