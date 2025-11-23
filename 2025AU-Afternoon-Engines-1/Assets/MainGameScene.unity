@@ -3599,6 +3599,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606858913}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &634225148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634225149}
+  - component: {fileID: 634225150}
+  m_Layer: 0
+  m_Name: GlassShatter
+  m_TagString: GlassShatter
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &634225149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634225148}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.34, y: -10.5, z: -14.73}
+  m_LocalScale: {x: 4.934008, y: 4.266293, z: 3.4426556}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 966830956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &634225150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634225148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &636360461 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8207058356520608362, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
@@ -4499,6 +4552,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797583622}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &800985504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800985505}
+  - component: {fileID: 800985507}
+  m_Layer: 0
+  m_Name: Monster
+  m_TagString: MonsterJumpscare
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800985505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800985504}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.29, y: -10.35, z: 5.84}
+  m_LocalScale: {x: 6.02261, y: 5.985719, z: 0.8959951}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 966830956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &800985507
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800985504}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &802780206
 GameObject:
   m_ObjectHideFlags: 0
@@ -5461,6 +5567,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1992778357}
+  - {fileID: 800985505}
+  - {fileID: 634225149}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &987366072
@@ -8931,12 +9039,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06f56a35e24ca7478630866c561e0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jumpscaresound: {fileID: 800985504}
+  glassShatter: {fileID: 634225148}
   memory1: {fileID: 990238719}
   memory2: {fileID: 1870479312}
   memory3: {fileID: 685992974}
   memory4: {fileID: 1082253890}
   memory5: {fileID: 1956909337}
-  dialougePanel: {fileID: 0}
 --- !u!1 &1469017725
 GameObject:
   m_ObjectHideFlags: 0
@@ -12917,8 +13026,8 @@ Transform:
   m_GameObject: {fileID: 1992778356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.95, y: -5.27, z: 5.84}
-  m_LocalScale: {x: 70.00681, y: 16.989033, z: 3.7224}
+  m_LocalPosition: {x: -4.17, y: -4.88, z: 5.84}
+  m_LocalScale: {x: 6.283582, y: 3.4213147, z: 0.8959951}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 966830956}
@@ -13929,6 +14038,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
+      propertyPath: glassSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 32e004d78067b3b4ab044a887045f5ad, type: 3}
+    - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
+      propertyPath: monsterSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: eee44af7b758945489a5b4c673ec0d0d, type: 3}
     - target: {fileID: 7900370772713696470, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 472.19995

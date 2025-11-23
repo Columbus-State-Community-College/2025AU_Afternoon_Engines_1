@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("Jumpscare Audio")]
     public AudioClip clockSFX;
+    public AudioClip monsterSFX;
+    public AudioClip glassSFX;
 
     public static AudioManager instance;
     private void Awake()

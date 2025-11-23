@@ -5,10 +5,13 @@ using System.Collections;
 public class DialougeSystem : MonoBehaviour
 {
     public TextMeshProUGUI dialougeText;
+    
     public string[] dialougeLines;
     public float textSpeed;
+   
+   
 
-    private int currentIndex;
+    public int currentIndex;
 
     AudioManager SFX;
 
@@ -28,13 +31,13 @@ public class DialougeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return)) 
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (dialougeText.text == dialougeLines[currentIndex])
             {
                 goToNextLine();
-
             }
+
 
             else
             {
@@ -45,9 +48,11 @@ public class DialougeSystem : MonoBehaviour
        
     }
 
-    void StartDialouge()
+    public void StartDialouge()
     {
         currentIndex = 0;
+        gameObject.SetActive(true);
+       
         StartCoroutine(TypeoutDialouge());
     }
 
@@ -65,7 +70,7 @@ public class DialougeSystem : MonoBehaviour
         }
     }
 
-    void goToNextLine()
+    public void goToNextLine()
     {
         if (currentIndex < dialougeLines.Length -1)
         {

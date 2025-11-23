@@ -14,6 +14,8 @@ TagManager:
   - Memory4
   - Memory5
   - Clock
+  - MonsterJumpscare
+  - GlassShatter
   layers:
   - Default
   - TransparentFX
