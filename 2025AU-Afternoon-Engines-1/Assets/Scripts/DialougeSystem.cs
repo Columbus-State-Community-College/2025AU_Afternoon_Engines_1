@@ -8,6 +8,7 @@ public class DialougeSystem : MonoBehaviour
     
     public string[] dialougeLines;
     public float textSpeed;
+    public GameObject dialogueBox;
    
    
 
@@ -19,13 +20,12 @@ public class DialougeSystem : MonoBehaviour
 
     private void Awake()
     {
+        dialogueBox.SetActive(false);
         SFX = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
     void Start()
     {
-        Time.timeScale = 0f;
-        dialougeText.text = string.Empty;
-        StartDialouge();
+        
     }
 
     // Update is called once per frame
@@ -48,11 +48,12 @@ public class DialougeSystem : MonoBehaviour
        
     }
 
-    public void StartDialouge()
+    public void StartDialouge(string[] lines)
     {
+        dialougeLines = lines;
         currentIndex = 0;
-        gameObject.SetActive(true);
-       
+        dialogueBox.SetActive(true);
+       Time.timeScale = 0f;
         StartCoroutine(TypeoutDialouge());
     }
 
@@ -60,6 +61,7 @@ public class DialougeSystem : MonoBehaviour
 
     IEnumerator TypeoutDialouge()
     {
+        dialougeText.text = "";
         foreach (char c in dialougeLines[currentIndex].ToCharArray())
         {
             SFX.PlaySFX(SFX.dialougeClick);
@@ -81,7 +83,7 @@ public class DialougeSystem : MonoBehaviour
 
         else
         {
-            gameObject.SetActive(false);
+            dialogueBox.SetActive(false);
             Time.timeScale = 1.0f;
         }
     }

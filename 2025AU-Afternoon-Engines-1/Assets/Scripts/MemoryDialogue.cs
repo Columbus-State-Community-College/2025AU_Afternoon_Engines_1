@@ -1,52 +1,28 @@
-using TMPro;
 using UnityEngine;
 
 public class MemoryDialogue : MonoBehaviour
 {
-
-    DialougeSystem dialouge;
     public string[] lines;
-    [SerializeField] GameObject dialougeBox;
-    
-
-
-    private void Awake()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-       
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            dialouge = GetComponent<DialougeSystem>();
-            //Time.timeScale = 0f;
-            Debug.Log("trigger hit");
-            dialougeBox.SetActive(true);
-            dialouge.dialougeText.text = string.Empty;
-            dialouge.dialougeLines[dialouge.currentIndex] = lines[dialouge.currentIndex];
-
+            FindFirstObjectByType<DialougeSystem>().StartDialouge(lines);
+            Destroy(gameObject);
         }
     }
 
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            dialouge = null;
-            
-        }
-    }
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return) && dialouge != null) 
-        {
-            dialouge.StartDialouge();
-        
-        }
-    }
+    
 }
