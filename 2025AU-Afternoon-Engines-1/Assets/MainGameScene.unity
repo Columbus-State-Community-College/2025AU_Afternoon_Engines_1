@@ -1507,6 +1507,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2061948148921312105, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: stepHeight
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061948148921312105, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: stepFrequency
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061948148921312105, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: walkBobAmplitude
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6741495105336830980, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1532,9 +1544,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1210820538}
     - target: {fileID: 6950245846953757389, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950245846953757389, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: runSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950245846953757389, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 1786295226}
+    - target: {fileID: 6950245846953757389, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: walkSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6950245846953757389, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
       propertyPath: staminaBar
       value: 

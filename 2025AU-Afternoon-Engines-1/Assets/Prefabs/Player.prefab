@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 476716760959942980}
   - component: {fileID: 1902775232723912976}
   - component: {fileID: 4793897224856147221}
-  - component: {fileID: 2550618698720424004}
+  - component: {fileID: 2061948148921312105}
   m_Layer: 0
   m_Name: FirstPersonCamera
   m_TagString: MainCamera
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2571031710666335429}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.27, z: 0.32}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.27, z: 0.3199997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -139,7 +139,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &2550618698720424004
+--- !u!114 &2061948148921312105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -378,8 +378,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5576446559853013402}
   - {fileID: 584189750677990979}
+  - {fileID: 5576446559853013402}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2046058257753051745
@@ -498,6 +498,7 @@ MonoBehaviour:
   uiManager: {fileID: 0}
   staminaBar: {fileID: 0}
   memoryManager: {fileID: 0}
+  animator: {fileID: 0}
   walkSpeed: 10
   runSpeed: 30
   memoryPanel: {fileID: 0}
