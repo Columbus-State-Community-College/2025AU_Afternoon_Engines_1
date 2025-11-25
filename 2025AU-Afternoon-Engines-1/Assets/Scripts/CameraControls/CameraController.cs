@@ -14,11 +14,25 @@ public class CameraController : MonoBehaviour
 
     private Vector3 startLocalPos;
     private float bobTimer = 0f;
+
+    [Header("Footsteps")]
+    public AudioClip footstepClip;
+    public float sprintPitch = 1.3f;
+
+    private bool footstepsPlaying = false;
+
+    private AudioSource footstepSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         startLocalPos = transform.localPosition;
+
+        footstepSource = GetComponent<AudioSource>();
+        footstepSource.clip = footstepClip;
+        footstepSource.loop = true;
+        footstepSource.playOnAwake = false;
+        footstepSource.pitch = 1f;
     }
 
     // Update is called once per frame
@@ -54,7 +68,7 @@ public class CameraController : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
 
         bool isMoving = (x != 0 || z != 0);
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        bool isRunning = GetComponentInParent<PlayerController>().currentlyRunning;
 
         if (isMoving)
         {
@@ -62,9 +76,26 @@ public class CameraController : MonoBehaviour
 
             float yOffset = stepHeight * Mathf.PingPong(bobTimer, 1f) * 2f;
             transform.localPosition = startLocalPos + new Vector3(0, yOffset, 0);
-        }
+
+            if (!footstepsPlaying && footstepClip != null)
+            {
+                footstepSource.pitch = isRunning ? sprintPitch : 1f;
+                footstepSource.Play();
+                footstepsPlaying = true;
+            }
+            else if (footstepsPlaying)
+            {
+                footstepSource.pitch = isRunning ? sprintPitch : 1f;
+            }
+        } 
         else
         {
+            if (footstepsPlaying)
+            {
+                footstepSource.Stop();
+                footstepsPlaying = false;
+            }
+
             transform.localPosition = Vector3.Lerp(transform.localPosition, startLocalPos, Time.deltaTime * 5f);
             bobTimer = 0f;
         }

@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private float currentStamina;
     public float staminaLoss = 5;
     public float staminaRegenRate = 5;
-    // private bool currentlyRunning = false;
+    public bool currentlyRunning = false;
     private bool exhausted = false;
 
     //Gravity
@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
             if(currentStamina > 0)
             {
                 currentSpeed = runSpeed;
+                currentlyRunning = true;
                 currentStamina -= staminaLoss * Time.deltaTime;
                 Debug.Log("running");
                 UpdateStaminaBar();
@@ -81,6 +82,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             currentSpeed = walkSpeed;
+            currentlyRunning = false;
+
             if(currentStamina < maxStamina)
             {
                 currentStamina += staminaRegenRate * Time.deltaTime;
@@ -112,6 +115,13 @@ public class PlayerController : MonoBehaviour
         }
 
 
+        MovePlayer();
+
+        ApplyGravity();
+    }
+
+    void MovePlayer()
+    {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
@@ -119,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
         characterController.Move(moveDirection * currentSpeed * Time.deltaTime);
 
-        ApplyGravity();
+        
     }
 
     private void ApplyGravity()
