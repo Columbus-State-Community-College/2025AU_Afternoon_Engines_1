@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -7,6 +8,12 @@ public class MainMenu : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject mainMenu;
     public GameObject creditsMenu;
+    public AudioMixer audioMixer;
+
+    private void Awake()
+    {
+        audioMixer.SetFloat("Ambience", Mathf.Log10(PlayerPrefs.GetFloat("AmbienceVolume")) * 20);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

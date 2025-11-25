@@ -13999,8 +13999,20 @@ PrefabInstance:
       value: MemoryDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 6851693907719571972, guid: ee9e0e51af952514c86a0e19b25eb124, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4177934
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851693907719571972, guid: ee9e0e51af952514c86a0e19b25eb124, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.942377
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851693907719571972, guid: ee9e0e51af952514c86a0e19b25eb124, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.9750376
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851693907719571972, guid: ee9e0e51af952514c86a0e19b25eb124, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.337
+      value: -17.489
       objectReference: {fileID: 0}
     - target: {fileID: 6851693907719571972, guid: ee9e0e51af952514c86a0e19b25eb124, type: 3}
       propertyPath: m_LocalPosition.y
