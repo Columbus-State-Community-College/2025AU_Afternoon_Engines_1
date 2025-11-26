@@ -1,27 +1,20 @@
 using UnityEngine;
 
-public class FlashlightColllision : MonoBehaviour
+public class FlashlightCollision : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Entered flashlight range");
-            EnemyController.agent.speed = 0;
 
-        } 
+            // Get the EnemyController component from the enemy that entered
+            EnemyController enemy = other.GetComponent<EnemyController>();
+            if (enemy != null && enemy.agent != null)
+            {
+                enemy.agent.speed = 0;
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -29,8 +22,13 @@ public class FlashlightColllision : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Exited flashlight range");
-            EnemyController.agent.speed = 4;
 
+            // Get the EnemyController component from the enemy that exited
+            EnemyController enemy = other.GetComponent<EnemyController>();
+            if (enemy != null && enemy.agent != null)
+            {
+                enemy.agent.speed = 4;
+            }
         }
     }
 }
