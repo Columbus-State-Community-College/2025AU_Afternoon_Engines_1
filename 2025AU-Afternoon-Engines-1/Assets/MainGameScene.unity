@@ -1989,11 +1989,11 @@ PrefabInstance:
     - target: {fileID: 2360515513322544189, guid: 4973da6e8555aa841b99066e19f9a4bd, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -4240518422139675933, guid: 2160139d9cf814649bfdc210356cd434, type: 3}
+      objectReference: {fileID: -4240518422139675933, guid: 62a36a0756f6d35488dabd7e11e15453, type: 3}
     - target: {fileID: 4060052892646996084, guid: 4973da6e8555aa841b99066e19f9a4bd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 3cb8e6e1bf91ceb4d92f35f264821682, type: 2}
+      objectReference: {fileID: 2100000, guid: 8dcd6260d1461894292adf50a812f0ce, type: 2}
     - target: {fileID: 5034262757620571481, guid: 4973da6e8555aa841b99066e19f9a4bd, type: 3}
       propertyPath: m_Height
       value: 5
