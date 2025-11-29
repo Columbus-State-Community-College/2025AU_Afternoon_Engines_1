@@ -17,6 +17,9 @@ public class MemoryCollectiing : MonoBehaviour
     [SerializeField] GameObject memory4;
     [SerializeField] GameObject memory5;
 
+    [SerializeField] GameObject puzzleTrigger; //trigger for the puzzle for the final memory
+    [SerializeField] GameObject puzzleCanvas; 
+
 
     private void Awake()
     {
@@ -35,6 +38,10 @@ public class MemoryCollectiing : MonoBehaviour
         //set jumpscare as inactive
         Jumpscaresound.SetActive(false);
         glassShatter.SetActive(false);
+
+        //set puzzle trigger inactive 
+        puzzleTrigger.SetActive(false);
+        puzzleCanvas.SetActive(false);
         
     }
     private void OnTriggerEnter(Collider other)
@@ -60,6 +67,7 @@ public class MemoryCollectiing : MonoBehaviour
         if (other.CompareTag("Memory4"))
         {
             memory5.SetActive(true);
+            puzzleTrigger.SetActive(true);
             Debug.Log("memory 5 has spawned");
         }
 
@@ -77,6 +85,12 @@ public class MemoryCollectiing : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if (other.CompareTag("PuzzleTrigger"))
+        {
+            puzzleCanvas.SetActive(true);
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+        }
 
     }
 }

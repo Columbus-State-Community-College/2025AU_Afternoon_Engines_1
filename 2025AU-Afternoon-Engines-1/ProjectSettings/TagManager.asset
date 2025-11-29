@@ -16,6 +16,7 @@ TagManager:
   - Clock
   - MonsterJumpscare
   - GlassShatter
+  - PuzzleTrigger
   layers:
   - Default
   - TransparentFX
