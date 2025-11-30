@@ -3408,7 +3408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &371273737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18073,6 +18073,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: lines.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[0]'
+      value: '"This is the place...?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[1]'
+      value: '"This was my home?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[2]'
+      value: '"I can''t remember it..." '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[3]'
+      value: '"Maybe..Maybe I should just leave..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[4]'
+      value: '"..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[5]'
+      value: '"That''s weird..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[6]'
+      value: '"The front door...It''s gone?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[7]'
+      value: '"Wasn''t it just here?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[8]'
+      value: '"How did it just disappear?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[9]'
+      value: '"...Maybe I should look around then.."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409299989502349726, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
+      propertyPath: 'lines.Array.data[10]'
+      value: '"I don''t really have a choice.."'
+      objectReference: {fileID: 0}
     - target: {fileID: 5612075227782047663, guid: 7e54b197f66aa1c42a6586eaf893e3d8, type: 3}
       propertyPath: m_Name
       value: DialogueTrigger
@@ -18575,56 +18623,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3389848960404817154, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_RaycastPadding.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6415480902065447158, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_margin.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6415480902065447158, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_margin.z
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6415480902065447158, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: cf79b77174332a943adc11397e44b48d, type: 2}
-    - target: {fileID: 6415480902065447158, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6415480902065447158, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -4462575234962255618, guid: cf79b77174332a943adc11397e44b48d, type: 2}
-    - target: {fileID: 6415480902065447158, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_characterSpacing
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6415480902065447158, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7879548556779627066, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -670
-      objectReference: {fileID: 0}
-    - target: {fileID: 7879548556779627066, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -165
-      objectReference: {fileID: 0}
     - target: {fileID: 7954343690565417036, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
       propertyPath: m_Name
       value: Dialouge
       objectReference: {fileID: 0}
-    - target: {fileID: 7954343690565417036, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1247959792426625936, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

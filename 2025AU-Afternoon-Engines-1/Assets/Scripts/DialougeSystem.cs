@@ -45,7 +45,15 @@ public class DialougeSystem : MonoBehaviour
                 dialougeText.text = dialougeLines[currentIndex];
             }
         }
-       
+
+        if (Input.GetKeyDown(KeyCode.Space)) //skip all dialogue 
+        {
+            StopAllCoroutines();
+            dialogueBox.SetActive(false);
+            Time.timeScale = 1.0f;
+
+
+        }
     }
 
     public void StartDialouge(string[] lines)
