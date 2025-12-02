@@ -17,6 +17,11 @@ public class UIManager : MonoBehaviour
     
     public void ShowMenu(int menuIndex)
     {
+        for (int i = 0; i < menus.Length; i++)
+        {
+            menus[i].SetActive(false);
+        }
+
         menus[menuIndex].SetActive(true);
         isMenuOpen = true;
         Time.timeScale = 0f;

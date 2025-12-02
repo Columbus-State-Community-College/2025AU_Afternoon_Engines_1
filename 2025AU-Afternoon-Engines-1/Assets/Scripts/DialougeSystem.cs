@@ -5,35 +5,39 @@ using System.Collections;
 public class DialougeSystem : MonoBehaviour
 {
     public TextMeshProUGUI dialougeText;
+    
     public string[] dialougeLines;
     public float textSpeed;
+    public GameObject dialogueBox;
+   
+   
 
-    private int currentIndex;
+    public int currentIndex;
 
     AudioManager SFX;
 
 
+
     private void Awake()
     {
+        dialogueBox.SetActive(false);
         SFX = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
     void Start()
     {
-        Time.timeScale = 0f;
-        dialougeText.text = string.Empty;
-        StartDialouge();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return)) 
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (dialougeText.text == dialougeLines[currentIndex])
             {
                 goToNextLine();
-
             }
+
 
             else
             {
@@ -44,9 +48,12 @@ public class DialougeSystem : MonoBehaviour
        
     }
 
-    void StartDialouge()
+    public void StartDialouge(string[] lines)
     {
+        dialougeLines = lines;
         currentIndex = 0;
+        dialogueBox.SetActive(true);
+       Time.timeScale = 0f;
         StartCoroutine(TypeoutDialouge());
     }
 
@@ -54,6 +61,7 @@ public class DialougeSystem : MonoBehaviour
 
     IEnumerator TypeoutDialouge()
     {
+        dialougeText.text = "";
         foreach (char c in dialougeLines[currentIndex].ToCharArray())
         {
             SFX.PlaySFX(SFX.dialougeClick);
@@ -64,7 +72,7 @@ public class DialougeSystem : MonoBehaviour
         }
     }
 
-    void goToNextLine()
+    public void goToNextLine()
     {
         if (currentIndex < dialougeLines.Length -1)
         {
@@ -75,7 +83,7 @@ public class DialougeSystem : MonoBehaviour
 
         else
         {
-            gameObject.SetActive(false);
+            dialogueBox.SetActive(false);
             Time.timeScale = 1.0f;
         }
     }

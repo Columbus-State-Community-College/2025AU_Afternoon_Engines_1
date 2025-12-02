@@ -198,6 +198,8 @@ MonoBehaviour:
   - '"I can''t...can''t seem to remember any of it.."'
   - '"Maybe I should look around...See if I remember anything.."'
   textSpeed: 0.1
+  textBox: {fileID: 0}
+  currentIndex: 0
 --- !u!1 &9071583252289557607
 GameObject:
   m_ObjectHideFlags: 0
