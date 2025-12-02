@@ -16,6 +16,9 @@ TagManager:
   - Clock
   - MonsterJumpscare
   - GlassShatter
+  - PuzzleTrigger
+  - FinalDialogue
+  - EndGame
   layers:
   - Default
   - TransparentFX
@@ -28,7 +31,7 @@ TagManager:
   - Lit Room
   - Menu
   - 
-  - 
+  - Floor2
   - 
   - 
   - 

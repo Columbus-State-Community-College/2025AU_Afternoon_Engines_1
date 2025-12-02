@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEditor.PackageManager;
 
 public class DialougeSystem : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DialougeSystem : MonoBehaviour
     public string[] dialougeLines;
     public float textSpeed;
     public GameObject dialogueBox;
+    public static bool dialogueEnded = true; //for end of game dialogue
    
    
 
@@ -45,7 +47,17 @@ public class DialougeSystem : MonoBehaviour
                 dialougeText.text = dialougeLines[currentIndex];
             }
         }
-       
+
+        if (Input.GetKeyDown(KeyCode.Space)) //skip all dialogue 
+        {
+            StopAllCoroutines();
+            dialogueBox.SetActive(false);
+            Time.timeScale = 1.0f;
+            dialogueEnded = true;
+            Debug.Log("Dialogue ended");
+
+
+        }
     }
 
     public void StartDialouge(string[] lines)
@@ -55,6 +67,8 @@ public class DialougeSystem : MonoBehaviour
         dialogueBox.SetActive(true);
        Time.timeScale = 0f;
         StartCoroutine(TypeoutDialouge());
+        dialogueEnded = false;
+        Debug.Log("dialogue running");
     }
 
     // coroutine "types" the lines
@@ -62,10 +76,13 @@ public class DialougeSystem : MonoBehaviour
     IEnumerator TypeoutDialouge()
     {
         dialougeText.text = "";
+        dialogueEnded = false;
         foreach (char c in dialougeLines[currentIndex].ToCharArray())
         {
             SFX.PlaySFX(SFX.dialougeClick);
             dialougeText.text += c;
+            
+            
 
             yield return new WaitForSecondsRealtime(textSpeed);
 
@@ -79,12 +96,15 @@ public class DialougeSystem : MonoBehaviour
             currentIndex++;
             dialougeText.text = string.Empty;
             StartCoroutine(TypeoutDialouge());
+            dialogueEnded=false;
         }
 
         else
         {
             dialogueBox.SetActive(false);
             Time.timeScale = 1.0f;
+            dialogueEnded = true;
+            Debug.Log("Dialogue ended");
         }
     }
 }
