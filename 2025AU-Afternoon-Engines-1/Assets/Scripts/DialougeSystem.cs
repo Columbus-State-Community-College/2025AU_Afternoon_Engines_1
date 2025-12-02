@@ -10,7 +10,7 @@ public class DialougeSystem : MonoBehaviour
     public string[] dialougeLines;
     public float textSpeed;
     public GameObject dialogueBox;
-    public static bool dialogueEnded; //for end of game dialogue
+    public static bool dialogueEnded = true; //for end of game dialogue
    
    
 
@@ -67,6 +67,8 @@ public class DialougeSystem : MonoBehaviour
         dialogueBox.SetActive(true);
        Time.timeScale = 0f;
         StartCoroutine(TypeoutDialouge());
+        dialogueEnded = false;
+        Debug.Log("dialogue running");
     }
 
     // coroutine "types" the lines
@@ -74,10 +76,13 @@ public class DialougeSystem : MonoBehaviour
     IEnumerator TypeoutDialouge()
     {
         dialougeText.text = "";
+        dialogueEnded = false;
         foreach (char c in dialougeLines[currentIndex].ToCharArray())
         {
             SFX.PlaySFX(SFX.dialougeClick);
             dialougeText.text += c;
+            
+            
 
             yield return new WaitForSecondsRealtime(textSpeed);
 
@@ -91,6 +96,7 @@ public class DialougeSystem : MonoBehaviour
             currentIndex++;
             dialougeText.text = string.Empty;
             StartCoroutine(TypeoutDialouge());
+            dialogueEnded=false;
         }
 
         else

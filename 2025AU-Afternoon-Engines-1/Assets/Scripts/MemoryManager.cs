@@ -102,15 +102,14 @@ public class MemoryManager : MonoBehaviour
     {
         if (memoryPages.Count == collectedIndexes.Count)
         {
-            
 
-                if (DialougeSystem.dialogueEnded && popupClosed)
-                {
-                    winScreen.SetActive(true);
-                    Time.timeScale = 0f;
-                    Cursor.lockState = CursorLockMode.None;
-                }
-            
+            winScreen.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+
+
+
+
         }
     }
 }

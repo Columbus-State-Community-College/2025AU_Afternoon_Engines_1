@@ -18,6 +18,7 @@ TagManager:
   - GlassShatter
   - PuzzleTrigger
   - FinalDialogue
+  - EndGame
   layers:
   - Default
   - TransparentFX

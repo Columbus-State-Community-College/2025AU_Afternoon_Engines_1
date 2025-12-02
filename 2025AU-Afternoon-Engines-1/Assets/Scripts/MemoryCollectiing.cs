@@ -20,7 +20,7 @@ public class MemoryCollectiing : MonoBehaviour
     [SerializeField] GameObject puzzleTrigger; //trigger for the puzzle for the final memory
     [SerializeField] GameObject puzzleCanvas;
     [SerializeField] GameObject finalDialogueTrigger;
-    
+    [SerializeField] GameObject EndGameTrigger;
 
 
     private void Awake()
@@ -45,6 +45,7 @@ public class MemoryCollectiing : MonoBehaviour
         puzzleTrigger.SetActive(false);
         puzzleCanvas.SetActive(false);
         finalDialogueTrigger.SetActive(false);
+        EndGameTrigger.SetActive(false);
         
     }
     private void OnTriggerEnter(Collider other)
@@ -76,6 +77,7 @@ public class MemoryCollectiing : MonoBehaviour
         if(other.CompareTag("Memory5"))
         {
            finalDialogueTrigger.SetActive(true);
+            EndGameTrigger.SetActive(true);
         }
         
 
