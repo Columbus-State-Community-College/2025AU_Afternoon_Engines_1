@@ -12,25 +12,27 @@ public class HotbarItemDisplay : MonoBehaviour
         Instance = this;
     }
 
-    public void ShowItem(HotbarSlot slot)
+    public void ShowItem(HotbarSlot selectedSlot)
     {
         if (currentItem != null)
             Destroy(currentItem);
 
-        if (slot.sceneItem != null)
-            slot.sceneItem.SetActive(false);
+        foreach (HotbarSlot slot in HotbarInventory.Instance.slots)
+        {
+            if (slot.sceneItem != null && slot != selectedSlot)
+                slot.sceneItem.SetActive(false);
+        }
 
-        // nothing selected
-        if (!slot.hasItem)
+        if (!selectedSlot.hasItem)
             return;
 
-        if (slot.sceneItem != null)
+        if (selectedSlot.sceneItem != null)
         {
-            slot.sceneItem.SetActive(true);
+            selectedSlot.sceneItem.SetActive(true);
             return;
         }
 
-        if (slot.prefabItem != null)
-            currentItem = Instantiate(slot.prefabItem, handAnchor);
+        if (selectedSlot.prefabItem != null)
+            currentItem = Instantiate(selectedSlot.prefabItem, handAnchor);
     }
 }

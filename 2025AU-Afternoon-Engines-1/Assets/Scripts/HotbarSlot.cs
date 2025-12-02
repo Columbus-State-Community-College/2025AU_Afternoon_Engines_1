@@ -19,7 +19,7 @@ public class HotbarSlot : MonoBehaviour
         sceneItem = null;
 
         iconImage.sprite = icon;
-        iconImage.enabled = true;
+        iconImage.gameObject.SetActive(true);
     }
 
     public void SetSceneItem(Sprite icon, string id, GameObject sceneObj)
@@ -30,7 +30,7 @@ public class HotbarSlot : MonoBehaviour
         prefabItem = null;
 
         iconImage.sprite = icon;
-        iconImage.enabled = true;
+        iconImage.gameObject.SetActive(true);
     }
 
     public void ClearItem()
@@ -40,12 +40,12 @@ public class HotbarSlot : MonoBehaviour
         prefabItem = null;
         sceneItem = null;
 
-        iconImage.enabled = false;
+        iconImage.gameObject.SetActive(false);
     }
 
     public void SetSelected(bool selected)
     {
         if (selectionHighlight != null)
-            selectionHighlight.enabled = selected;
+            selectionHighlight.gameObject.SetActive(selected);
     }
 }
