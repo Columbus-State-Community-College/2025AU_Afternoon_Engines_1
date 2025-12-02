@@ -18,10 +18,7 @@ public class FinalDialogue : MonoBehaviour
             {
                 FindFirstObjectByType<DialougeSystem>().StartDialouge(finalDialogue);
                 Destroy(gameObject);
-                if (DialougeSystem.dialogueEnded)
-                {
-                    FindFirstObjectByType<MemoryManager>().CheckForWin();
-                }
+               
 
 
 
@@ -45,14 +42,7 @@ public class FinalDialogue : MonoBehaviour
        
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            
-        }
-    }
-
+    
 
 
 }
