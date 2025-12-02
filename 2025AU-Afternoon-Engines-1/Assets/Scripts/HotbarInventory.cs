@@ -54,6 +54,7 @@ public class HotbarInventory : MonoBehaviour
                 return true;
             }
         }
+        Debug.Log("Hotbar full! Could not add " + itemID);
         return false;
     }
 
