@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEditor.PackageManager;
 
 public class DialougeSystem : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DialougeSystem : MonoBehaviour
     public string[] dialougeLines;
     public float textSpeed;
     public GameObject dialogueBox;
+    public static bool dialogueEnded; //for end of game dialogue
    
    
 
@@ -51,6 +53,8 @@ public class DialougeSystem : MonoBehaviour
             StopAllCoroutines();
             dialogueBox.SetActive(false);
             Time.timeScale = 1.0f;
+            dialogueEnded = true;
+            Debug.Log("Dialogue ended");
 
 
         }
@@ -93,6 +97,8 @@ public class DialougeSystem : MonoBehaviour
         {
             dialogueBox.SetActive(false);
             Time.timeScale = 1.0f;
+            dialogueEnded = true;
+            Debug.Log("Dialogue ended");
         }
     }
 }

@@ -9,18 +9,20 @@ public class MemoryManager : MonoBehaviour
     public List<GameObject> memoryPages;
     public GameObject memButtons;
     public GameObject exitMemoryText;
+  
 
     private List<int> collectedIndexes = new List<int>();
     private List<GameObject> activeMemories = new List<GameObject>();
     private int currentIndex = 0;
-    private bool popupClosed = false;
+    public static bool popupClosed = false;
+    
     
     [Header("Win Screen")]
     public GameObject winScreen;
 
     private void Update()
     {
-        CheckForWin();
+        //CheckForWin();
     }
     public void CollectMemory(GameObject memoryPage)
     {
@@ -96,16 +98,19 @@ public class MemoryManager : MonoBehaviour
         activeMemories[currentIndex].SetActive(true);
     }
 
-    private void CheckForWin()
+    public void CheckForWin()
     {
         if (memoryPages.Count == collectedIndexes.Count)
         {
-            if (popupClosed)
-            {
-                winScreen.SetActive(true);
-                Time.timeScale = 0f;
-                Cursor.lockState = CursorLockMode.None;
-            }
+            
+
+                if (DialougeSystem.dialogueEnded && popupClosed)
+                {
+                    winScreen.SetActive(true);
+                    Time.timeScale = 0f;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+            
         }
     }
 }

@@ -10700,6 +10700,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210820538}
   m_CullTransparentMesh: 1
+--- !u!1 &1226297609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1226297612}
+  - component: {fileID: 1226297611}
+  - component: {fileID: 1226297610}
+  m_Layer: 0
+  m_Name: FinalDialogueTrigger
+  m_TagString: FinalDialogue
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1226297610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226297609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe05bd300b63f14bb9cbb85cb1784e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalDialogue:
+  - '"Was that it?"'
+  - '"That last note...Never be alone? What does that mean?"'
+  - '"I can...I think I remember."'
+  - '"That monster...It was always here."'
+  - '"It stared at me through the windows...And my room...Always watching."'
+  - '"I ran to Dad''s office, hoping he would help."'
+  - '"Hoping he would see what I see..."'
+  - '"..But he never did."'
+  - '"He ended up locking the door...So I didn''t bother him."'
+  - '"..."'
+  - '"I wonder who sent me here...and why. I guess I won''t know."'
+  - '"I should leave. I don''t need to come here anymore."'
+  - '"Goodbye my childhood home...I will miss you."'
+  - '"As for the monster...I won''t."'
+  - '"I hope you''re trapped here."'
+  - '"And in my memories."'
+--- !u!65 &1226297611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226297609}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1226297612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226297609}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.51, y: 2.39, z: -9.23}
+  m_LocalScale: {x: 4.256785, y: 3.9865124, z: 3.3784006}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234759212
 GameObject:
   m_ObjectHideFlags: 0
@@ -12135,6 +12218,7 @@ MonoBehaviour:
   memory5: {fileID: 1956909337}
   puzzleTrigger: {fileID: 240579477}
   puzzleCanvas: {fileID: 371273736}
+  finalDialogueTrigger: {fileID: 1226297609}
 --- !u!1001 &1463765483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18912,3 +18996,4 @@ SceneRoots:
   - {fileID: 2133469252}
   - {fileID: 371273740}
   - {fileID: 240579479}
+  - {fileID: 1226297612}

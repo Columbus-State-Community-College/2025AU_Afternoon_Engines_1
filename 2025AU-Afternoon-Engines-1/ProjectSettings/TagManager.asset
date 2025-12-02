@@ -17,6 +17,7 @@ TagManager:
   - MonsterJumpscare
   - GlassShatter
   - PuzzleTrigger
+  - FinalDialogue
   layers:
   - Default
   - TransparentFX
