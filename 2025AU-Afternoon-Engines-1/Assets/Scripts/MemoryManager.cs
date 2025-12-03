@@ -13,7 +13,7 @@ public class MemoryManager : MonoBehaviour
     private List<int> collectedIndexes = new List<int>();
     private List<GameObject> activeMemories = new List<GameObject>();
     private int currentIndex = 0;
-    private bool popupClosed = false;
+    public static bool popupClosed = false;
 
     [Header("Win Screen")]
     public GameObject winScreen;
@@ -125,7 +125,7 @@ public class MemoryManager : MonoBehaviour
         activeMemories[currentIndex].SetActive(true);
     }
 
-    private void CheckForWin()
+    public void CheckForWin()
     {
         if (memoryPages.Count == collectedIndexes.Count)
         {
