@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 
 public class DialougeSystem : MonoBehaviour
 {
