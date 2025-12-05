@@ -21,6 +21,7 @@ public class MemoryCollectiing : MonoBehaviour
     [SerializeField] GameObject puzzleCanvas;
     [SerializeField] GameObject finalDialogueTrigger;
     [SerializeField] GameObject EndGameTrigger;
+    [SerializeField] GameObject puzzleBarrier;
 
 
     private void Awake()
@@ -46,16 +47,22 @@ public class MemoryCollectiing : MonoBehaviour
         puzzleCanvas.SetActive(false);
         finalDialogueTrigger.SetActive(false);
         EndGameTrigger.SetActive(false);
+        puzzleBarrier.SetActive(false);
         
+    }
+
+    private void Update()
+    {
+        checkPuzzle();
     }
     private void OnTriggerEnter(Collider other)
     {
-            if(other.CompareTag("Memory1"))
+        if (other.CompareTag("Memory1"))
         {
             Jumpscaresound.SetActive(true);
             memory2.SetActive(true);
             Debug.Log("memory 2 has spawned");
-            
+
         }
         if (other.CompareTag("Memory2"))
         {
@@ -72,18 +79,21 @@ public class MemoryCollectiing : MonoBehaviour
         {
             memory5.SetActive(true);
             puzzleTrigger.SetActive(true);
+            puzzleBarrier.SetActive(true);
             Debug.Log("memory 5 has spawned");
         }
-        if(other.CompareTag("Memory5"))
+        if (other.CompareTag("Memory5"))
         {
-           finalDialogueTrigger.SetActive(true);
+            finalDialogueTrigger.SetActive(true);
             EndGameTrigger.SetActive(true);
+
+
         }
-        
 
 
 
-        if(other.CompareTag("MonsterJumpscare"))
+
+        if (other.CompareTag("MonsterJumpscare"))
         {
             audioManager.PlayJumpScare(audioManager.monsterSFX);
             Destroy(other.gameObject);
@@ -101,6 +111,17 @@ public class MemoryCollectiing : MonoBehaviour
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    private void checkPuzzle()
+    {
+        if(puzzleTrigger != null)
+        {
+            finalDialogueTrigger.SetActive(false);
+        }
+    }
+
+      
 
     }
-}
+

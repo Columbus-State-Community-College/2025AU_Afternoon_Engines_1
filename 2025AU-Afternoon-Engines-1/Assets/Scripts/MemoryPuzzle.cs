@@ -7,6 +7,7 @@ public class MemoryPuzzle : MonoBehaviour
 
     [SerializeField] TMP_InputField userAnswer;
     [SerializeField] GameObject puzzleTrigger;
+    [SerializeField] GameObject puzzleBarrier;
 
     string puzzleAnswer = "NOSTALGIA";
     public TextMeshProUGUI hintText;
@@ -23,7 +24,9 @@ public class MemoryPuzzle : MonoBehaviour
         if (answer.ToUpper() == puzzleAnswer.ToUpper())
         {
             hintText.text = "Correct.";
-            Destroy(puzzleTrigger.gameObject); //makes memory accessible
+            Destroy(puzzleTrigger.gameObject);
+            Destroy(puzzleBarrier.gameObject);
+            //makes memory accessible
             Time.timeScale = 1.0f;
             gameObject.SetActive(false);
         }
@@ -37,10 +40,14 @@ public class MemoryPuzzle : MonoBehaviour
 
     }
 
-    public void ExitPuzzle()
+    private void Update()
     {
-        gameObject.SetActive(false);
-        Time.timeScale = 1.0f;
-        Cursor.lockState = CursorLockMode.Locked;
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            gameObject.SetActive(false);
+            Time.timeScale = 1.0f;
+
+
+        }
     }
 }
