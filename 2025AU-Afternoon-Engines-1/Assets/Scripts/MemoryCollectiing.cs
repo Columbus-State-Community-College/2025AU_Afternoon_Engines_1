@@ -23,10 +23,18 @@ public class MemoryCollectiing : MonoBehaviour
     [SerializeField] GameObject EndGameTrigger;
     [SerializeField] GameObject puzzleBarrier;
 
+    [SerializeField] MonsterSpawn spawn;
+
+     
+
+
+
+
 
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+
     }
 
     private void Start()
@@ -41,6 +49,7 @@ public class MemoryCollectiing : MonoBehaviour
         //set jumpscare as inactive
         Jumpscaresound.SetActive(false);
         glassShatter.SetActive(false);
+       
 
         //set puzzle trigger inactive 
         puzzleTrigger.SetActive(false);
@@ -48,7 +57,10 @@ public class MemoryCollectiing : MonoBehaviour
         finalDialogueTrigger.SetActive(false);
         EndGameTrigger.SetActive(false);
         puzzleBarrier.SetActive(false);
-        
+
+      
+
+
     }
 
     private void Update()
@@ -97,6 +109,8 @@ public class MemoryCollectiing : MonoBehaviour
         {
             audioManager.PlayJumpScare(audioManager.monsterSFX);
             Destroy(other.gameObject);
+            spawn.SpawnMonster();
+            
         }
 
         if (other.CompareTag("GlassShatter"))
@@ -120,6 +134,8 @@ public class MemoryCollectiing : MonoBehaviour
             finalDialogueTrigger.SetActive(false);
         }
     }
+
+    
 
       
 
