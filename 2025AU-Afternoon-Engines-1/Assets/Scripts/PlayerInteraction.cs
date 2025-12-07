@@ -9,9 +9,12 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private LayerMask mask;
 
+    AudioManager audioManager;
+
     void Start()
     {
         cam = Camera.main;
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
     }
 
@@ -37,6 +40,7 @@ public class PlayerInteraction : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     interactable.BaseInteract();
+                    audioManager.PlaySFX(audioManager.itemPickup);
                 }
 
             }

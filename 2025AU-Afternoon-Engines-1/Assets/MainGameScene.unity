@@ -22054,6 +22054,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4909012787660203555, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 442
+      objectReference: {fileID: 0}
     - target: {fileID: 6415480902065447158, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
       propertyPath: m_fontColor.b
       value: 1
@@ -22085,6 +22089,12 @@ PrefabInstance:
     - target: {fileID: 7954343690565417036, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301400086209640478, guid: 0167dc2d7303af244a7c7f158a998d8c, type: 3}
+      propertyPath: m_text
+      value: '[Enter] - Continue
+
+        [Space] - Skip all dialogue'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22469,13 +22479,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
+      propertyPath: doorOpen
+      value: 
+      objectReference: {fileID: 8300000, guid: 6442a95141065894790221c9da6666b7, type: 3}
+    - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
       propertyPath: glassSFX
       value: 
       objectReference: {fileID: 8300000, guid: 32e004d78067b3b4ab044a887045f5ad, type: 3}
     - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
+      propertyPath: doorClose
+      value: 
+      objectReference: {fileID: 8300000, guid: df74ab84b0be04645bf1da62bca01e24, type: 3}
+    - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
       propertyPath: footsteps
       value: 
       objectReference: {fileID: 8300000, guid: bfad1193c83e5524482892280820dec7, type: 3}
+    - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
+      propertyPath: itemPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e4c613eb5bac8d4e9d4c7be42999e59, type: 3}
     - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
       propertyPath: monsterSFX
       value: 

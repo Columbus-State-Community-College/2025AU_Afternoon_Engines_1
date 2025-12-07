@@ -17,6 +17,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip flashlightSFX;
     public AudioClip dialougeClick;
     public AudioClip memoryPage;
+    public AudioClip itemPickup;
+    public AudioClip doorOpen;
+    public AudioClip doorClose;
 
     [Header("Jumpscare Audio")]
     public AudioClip clockSFX;
