@@ -22484,6 +22484,10 @@ PrefabInstance:
       propertyPath: LoopSoundsSource
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3137730240115440409, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7900370772713696470, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 472.19995

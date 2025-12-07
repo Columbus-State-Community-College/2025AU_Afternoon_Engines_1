@@ -14,7 +14,14 @@ public class UIManager : MonoBehaviour
     public GameObject deathScreen;
 
     public string menuScene = "MainMenu";
-    
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
+
     public void ShowMenu(int menuIndex)
     {
         for (int i = 0; i < menus.Length; i++)
@@ -42,6 +49,7 @@ public class UIManager : MonoBehaviour
         HideMenu(1);
         ShowCursor();
         SceneManager.LoadScene("MainMenu");
+        audioManager.AmbienceSource.Pause();
     }
 
     private void ShowCursor()

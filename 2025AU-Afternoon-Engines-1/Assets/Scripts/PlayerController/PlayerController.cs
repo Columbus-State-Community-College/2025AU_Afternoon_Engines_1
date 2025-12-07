@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
 
         currentHealth = maxHealth;
 
+        SFX.AmbienceSource.Play();
+
     }
 
     // Update is called once per frame
