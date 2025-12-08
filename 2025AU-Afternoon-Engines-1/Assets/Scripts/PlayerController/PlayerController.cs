@@ -107,11 +107,21 @@ public class PlayerController : MonoBehaviour
         // E to open Inventory
         if (Input.GetKey(KeyCode.E))
         {
-            InventoryManager.Instance.ListItems();
-            uiManager.ShowMenu(0);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (UIManager.isMenuOpen && UIManager.currentMenu == 0)
+                {
+                    uiManager.HideMenu(0);
+                }
+                else if (!UIManager.isMenuOpen)
+                {
+                    InventoryManager.Instance.ListItems();
+                    uiManager.ShowMenu(0);
+                }
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             memoryManager.ClosePopup();
         }

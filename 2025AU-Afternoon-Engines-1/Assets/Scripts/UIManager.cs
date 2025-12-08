@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     // Set isMenuOpen to true or false, static so it can be widely used
     public static bool isMenuOpen;
 
+    public static int currentMenu = -1;
+
     public GameObject[] menus;
 
     public GameObject memoryCanvas;
@@ -31,6 +33,7 @@ public class UIManager : MonoBehaviour
 
         menus[menuIndex].SetActive(true);
         isMenuOpen = true;
+        currentMenu = menuIndex;
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
 
@@ -39,6 +42,7 @@ public class UIManager : MonoBehaviour
     public void HideMenu(int menuIndex)
     {
         menus[menuIndex].SetActive(false);
+        if (currentMenu == menuIndex) currentMenu = -1;
         isMenuOpen = false;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;

@@ -17,4 +17,4 @@ MonoBehaviour:
   itemDescription: 
   value: 20
   useType: 2
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 750d2842dde6e7a4ab385f36ff5f8bf2, type: 3}
