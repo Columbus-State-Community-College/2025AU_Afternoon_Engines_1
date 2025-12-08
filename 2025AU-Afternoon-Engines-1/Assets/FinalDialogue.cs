@@ -3,12 +3,16 @@ using UnityEngine;
 public class FinalDialogue : MonoBehaviour
 {
     public string[] finalDialogue;
+    AudioManager audioManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         GetComponent<MemoryManager>();
         GetComponent<DialougeSystem>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
+
+   
     // Update is called once per frame
     void OnTriggerStay(Collider other)
     {
@@ -18,6 +22,9 @@ public class FinalDialogue : MonoBehaviour
             {
                 FindFirstObjectByType<DialougeSystem>().StartDialouge(finalDialogue);
                 Destroy(gameObject);
+                
+
+             
                
 
 
@@ -42,7 +49,19 @@ public class FinalDialogue : MonoBehaviour
        
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            audioManager.PlaySFX(audioManager.doorClose);
+        }
+    }
+
+   
+
     
+
+
 
 
 }

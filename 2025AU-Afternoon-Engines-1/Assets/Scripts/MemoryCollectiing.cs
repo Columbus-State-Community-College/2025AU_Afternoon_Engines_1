@@ -22,10 +22,14 @@ public class MemoryCollectiing : MonoBehaviour
     [SerializeField] GameObject finalDialogueTrigger;
     [SerializeField] GameObject EndGameTrigger;
     [SerializeField] GameObject puzzleBarrier;
+    [SerializeField] GameObject frontDoor; //for end game
 
     [SerializeField] MonsterSpawn spawn;
+    
 
-     
+    public static bool finalMemorycollected= false;
+
+
 
 
 
@@ -57,6 +61,10 @@ public class MemoryCollectiing : MonoBehaviour
         finalDialogueTrigger.SetActive(false);
         EndGameTrigger.SetActive(false);
         puzzleBarrier.SetActive(false);
+
+        //hide the front door
+        frontDoor.SetActive(false);
+
 
       
 
@@ -98,6 +106,10 @@ public class MemoryCollectiing : MonoBehaviour
         {
             finalDialogueTrigger.SetActive(true);
             EndGameTrigger.SetActive(true);
+            frontDoor.SetActive(true); //have the front door return
+            finalMemorycollected = true;
+            
+         
 
 
         }

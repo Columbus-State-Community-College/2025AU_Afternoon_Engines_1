@@ -33,23 +33,24 @@ public class DialougeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (dialougeText.text == dialougeLines[currentIndex])
+      if (!dialogueEnded) { 
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                goToNextLine();
+                if (dialougeText.text == dialougeLines[currentIndex])
+                {
+                    goToNextLine();
+                }
+
+
+                else
+                {
+                    StopAllCoroutines();
+                    dialougeText.text = dialougeLines[currentIndex];
+                }
             }
 
-
-            else
+            if (Input.GetKeyDown(KeyCode.Space)) //skip all dialogue 
             {
-                StopAllCoroutines();
-                dialougeText.text = dialougeLines[currentIndex];
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space)) //skip all dialogue 
-        {
             StopAllCoroutines();
             dialogueBox.SetActive(false);
             Time.timeScale = 1.0f;
@@ -59,6 +60,8 @@ public class DialougeSystem : MonoBehaviour
 
         }
     }
+    }
+
 
     public void StartDialouge(string[] lines)
     {

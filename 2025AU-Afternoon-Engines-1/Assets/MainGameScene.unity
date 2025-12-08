@@ -2073,6 +2073,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 220048049}
     - target: {fileID: 3988845362419284740, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: spawn2
+      value: 
+      objectReference: {fileID: 2035551476}
+    - target: {fileID: 3988845362419284740, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
       propertyPath: memory1
       value: 
       objectReference: {fileID: 990238719}
@@ -2092,6 +2096,14 @@ PrefabInstance:
       propertyPath: memory5
       value: 
       objectReference: {fileID: 1956909337}
+    - target: {fileID: 3988845362419284740, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: monster
+      value: 
+      objectReference: {fileID: 1788732293283264264, guid: 4973da6e8555aa841b99066e19f9a4bd, type: 3}
+    - target: {fileID: 3988845362419284740, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
+      propertyPath: frontDoor
+      value: 
+      objectReference: {fileID: 727941872}
     - target: {fileID: 3988845362419284740, guid: b81b097666fd1aa428739e73a6935bb5, type: 3}
       propertyPath: glassShatter
       value: 
@@ -3469,6 +3481,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263468638}
   m_CullTransparentMesh: 1
+--- !u!1001 &270342906
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.489
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662927712789560890, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6418165065670351851, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: m_Name
+      value: Monster Spawn (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
 --- !u!1 &326923580
 GameObject:
   m_ObjectHideFlags: 0
@@ -6305,6 +6374,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727181759}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &727941872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2777879857361701737, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+  m_PrefabInstance: {fileID: 762455895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730072114
 GameObject:
   m_ObjectHideFlags: 0
@@ -6905,6 +6979,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759447137}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &762455895
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2777879857361701737, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_Name
+      value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.268352
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18613887
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -43.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298556528695546323, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66d8f5e48544a894aa6872e316aefad7, type: 3}
 --- !u!1001 &774413061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20720,6 +20851,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029664826}
   m_CullTransparentMesh: 1
+--- !u!114 &2035551476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7027408470416589853, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+  m_PrefabInstance: {fileID: 270342906}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d08de0edf16ff44c94eb041afb82a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2060550153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21390,7 +21532,7 @@ Transform:
   m_GameObject: {fileID: 2104824479}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.46, y: 2.89, z: -7.31}
+  m_LocalPosition: {x: -9.77, y: 2.51, z: -40.49}
   m_LocalScale: {x: 7.997706, y: 4.625688, z: 3.9200747}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22263,6 +22405,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: finalDialogue.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[1]'
+      value: '"I think I heard a door..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[2]'
+      value: '"Maybe it''s the front door?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[3]'
+      value: '"That last note...Never be alone? What does that mean?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[4]'
+      value: '"I can...I think I remember."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[5]'
+      value: '"That monster...It was always here."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[6]'
+      value: '"It stared at me through the windows...And my room...Always watching."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[7]'
+      value: '"I ran to Dad''s office, hoping he would help."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[8]'
+      value: '"Hoping he would see what I see..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[9]'
+      value: '"..But he never did."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[10]'
+      value: '"He ended up locking the door...So I didn''t bother him."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[11]'
+      value: '"..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[12]'
+      value: '"I wonder who sent me here...and why. I guess I won''t know."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[13]'
+      value: '"I should leave. I don''t need to come here anymore."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[14]'
+      value: '"Goodbye my childhood home...I will miss you."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[15]'
+      value: '"As for the monster...I won''t."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[16]'
+      value: '"I hope you''re trapped here."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779969572257100438, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: 'finalDialogue.Array.data[17]'
+      value: '"And in my memories."'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22544,6 +22758,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: bfad1193c83e5524482892280820dec7, type: 3}
     - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
+      propertyPath: finalChase
+      value: 
+      objectReference: {fileID: 8300000, guid: 54526ee8ce49b8d4dacaa95cb445b71d, type: 3}
+    - target: {fileID: 1423542075310398119, guid: f2a6b81f04b11d046a1831c2767baa6d, type: 3}
       propertyPath: itemPickup
       value: 
       objectReference: {fileID: 8300000, guid: 2e4c613eb5bac8d4e9d4c7be42999e59, type: 3}
@@ -22698,3 +22916,5 @@ SceneRoots:
   - {fileID: 548657353}
   - {fileID: 7666476609667362819}
   - {fileID: 5296789242088067576}
+  - {fileID: 270342906}
+  - {fileID: 762455895}

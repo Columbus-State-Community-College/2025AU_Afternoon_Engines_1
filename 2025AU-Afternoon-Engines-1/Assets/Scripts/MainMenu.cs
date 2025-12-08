@@ -9,10 +9,12 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject creditsMenu;
     public AudioMixer audioMixer;
+    public AudioSource SFX;
 
     private void Awake()
     {
         audioMixer.SetFloat("Ambience", Mathf.Log10(PlayerPrefs.GetFloat("AmbienceVolume")) * 20);
+        audioMixer.SetFloat("SFX", Mathf.Log10(PlayerPrefs.GetFloat("SFXVolume")) * 20);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -57,5 +59,9 @@ public class MainMenu : MonoBehaviour
 
         mainMenu.SetActive(false);
         creditsMenu.SetActive(true);
+    }
+    public void playSFX()
+    {
+        SFX.Play();
     }
 }

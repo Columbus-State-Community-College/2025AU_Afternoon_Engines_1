@@ -7,12 +7,15 @@ public class EnemyController : MonoBehaviour
     public static NavMeshAgent agent;
 
     public static bool isInLightZone = false;
+    AudioManager audioManager;
+    GameObject memory5; //for final chase
  
 
     void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        
     }
 
     void Update()
@@ -33,6 +36,11 @@ public class EnemyController : MonoBehaviour
 
         agent.isStopped = false;
         agent.SetDestination(player.position);
+        if (MemoryCollectiing.finalMemorycollected)
+        {
+            agent.speed = 8;
+           
+        }
     }
 
     private void StopMoving()

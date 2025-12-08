@@ -8,10 +8,13 @@ public class AudioManager : MonoBehaviour
     public AudioSource SFXSource;
     public AudioSource JumpScareSource;
     public AudioMixer audioMixer;
+    
    
 
     [Header("Ambience: ")]
     public AudioClip ambience;
+   
+
     [Header("SFX")]
      
     public AudioClip flashlightSFX;
@@ -20,11 +23,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip itemPickup;
     public AudioClip doorOpen;
     public AudioClip doorClose;
+    public AudioClip finalChase;
 
     [Header("Jumpscare Audio")]
     public AudioClip clockSFX;
     public AudioClip monsterSFX;
     public AudioClip glassSFX;
+
+   
+
+
 
     public static AudioManager instance;
     private void Awake()
@@ -47,9 +55,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        
-
         AmbienceSource.clip = ambience;
+
         //AmbienceSource.Play(); 
     }
 
@@ -62,6 +69,8 @@ public class AudioManager : MonoBehaviour
     {
         JumpScareSource.PlayOneShot(clip);
     }
+
+    
 
 
 
