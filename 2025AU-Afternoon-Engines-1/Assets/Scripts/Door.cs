@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
     AudioManager audioManager;
 
     public bool isOpen = false;
+    public bool isLocked = false;
     public float openAngle = 90f;
     public float openSpeed = 2f;
 
@@ -25,10 +26,20 @@ public class Door : MonoBehaviour
     }
     public void ToggleDoor()
     {
+        if (isLocked)
+        {
+            Debug.Log("Door is locked.");
+            return;
+        }
         isOpen = !isOpen;
         StopAllCoroutines();
         StartCoroutine(AnimateDoor());
         audioManager.PlaySFX(audioManager.doorOpen);
+    }
+
+    public void Unlock()
+    {
+        isLocked = false;
     }
 
     IEnumerator AnimateDoor()

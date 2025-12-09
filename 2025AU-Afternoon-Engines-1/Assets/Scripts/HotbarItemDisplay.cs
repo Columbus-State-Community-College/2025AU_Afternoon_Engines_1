@@ -44,4 +44,13 @@ public class HotbarItemDisplay : MonoBehaviour
             currentItem = Instantiate(slot.prefabItem, handAnchor);
         }
     }
+
+    public void ClearHeldItem()
+    {
+        if (currentItem != null)
+        {
+            Destroy(currentItem);
+            currentItem = null;
+        }
+    }
 }
