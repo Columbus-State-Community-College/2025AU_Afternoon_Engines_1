@@ -35,4 +35,13 @@ public class HotbarItemDisplay : MonoBehaviour
         if (selectedSlot.prefabItem != null)
             currentItem = Instantiate(selectedSlot.prefabItem, handAnchor);
     }
+
+    public void SpawnItemInHand(HotbarSlot slot)
+    {
+
+        if (slot.prefabItem != null)    
+        {
+            currentItem = Instantiate(slot.prefabItem, handAnchor);
+        }
+    }
 }

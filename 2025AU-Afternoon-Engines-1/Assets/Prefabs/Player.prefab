@@ -526,7 +526,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6741495105336830980}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!23 &2468960290169609241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -690,6 +690,7 @@ MonoBehaviour:
   finalDialogueTrigger: {fileID: 0}
   EndGameTrigger: {fileID: 0}
   puzzleBarrier: {fileID: 0}
+  frontDoor: {fileID: 0}
   spawn: {fileID: 0}
 --- !u!1 &8115289517095235136
 GameObject:
