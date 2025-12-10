@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     CharacterController characterController;
+
     [Header("Speeds")]
     public float walkSpeed = 5.0f;
     public float runSpeed = 15.0f;
@@ -16,22 +16,44 @@ public class PlayerController : MonoBehaviour
     private float currentStamina;
     public float staminaLoss = 5;
     public float staminaRegenRate = 5;
-    // private bool currentlyRunning = false;
     private bool exhausted = false;
-     //for switching speed
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [Header("Cursor Settings")]
+    private bool cursorUnlocked = false;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         currentStamina = maxStamina;
+
+        // Lock cursor at start
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Toggle cursor with C key
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            cursorUnlocked = !cursorUnlocked;
+
+            if (cursorUnlocked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+        }
+
+        // Stamina and running
         if (Input.GetKey(KeyCode.LeftShift) && exhausted == false)
         {
-            if(currentStamina > 0)
+            if (currentStamina > 0)
             {
                 currentSpeed = runSpeed;
                 currentStamina -= staminaLoss * Time.deltaTime;
@@ -43,11 +65,10 @@ public class PlayerController : MonoBehaviour
                 exhausted = true;
             }
         }
-
         else
         {
             currentSpeed = walkSpeed;
-            if(currentStamina < maxStamina)
+            if (currentStamina < maxStamina)
             {
                 currentStamina += staminaRegenRate * Time.deltaTime;
                 Debug.Log("regen");
@@ -59,17 +80,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
-
-
-
-
-
-            float x = Input.GetAxis("Horizontal");
+        // Movement
+        float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-
         Vector3 moveDirection = transform.right * x + transform.forward * y;
-
         characterController.Move(moveDirection * currentSpeed * Time.deltaTime);
     }
 }
