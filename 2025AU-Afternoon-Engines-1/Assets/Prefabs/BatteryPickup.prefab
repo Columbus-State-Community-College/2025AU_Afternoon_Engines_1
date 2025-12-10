@@ -137,5 +137,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2a4abdac036454893c7e7bfe1f585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Pick up battery
+  message: Pick up Battery
   Item: {fileID: 11400000, guid: 02d1b013c9e16e4408562d2f761e5ef2, type: 2}
