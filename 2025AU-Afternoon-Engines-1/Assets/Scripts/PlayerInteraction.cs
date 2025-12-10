@@ -48,8 +48,10 @@ public class PlayerInteraction : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                currentInteractable.OnLookExit(interactableUI);
                 interactable.BaseInteract();
                 audioManager.PlaySFX(audioManager.itemPickup);
+
             }
 
         } else
