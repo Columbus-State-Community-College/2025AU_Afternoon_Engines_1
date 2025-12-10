@@ -25886,6 +25886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster Spawn
       objectReference: {fileID: 0}
+    - target: {fileID: 7027408470416589853, guid: 7b2969e873b34ce41ba44c830db7e6fd, type: 3}
+      propertyPath: monsterPrefab
+      value: 
+      objectReference: {fileID: 395863546113976570, guid: 083038bde9631b04b864147b9afc9226, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

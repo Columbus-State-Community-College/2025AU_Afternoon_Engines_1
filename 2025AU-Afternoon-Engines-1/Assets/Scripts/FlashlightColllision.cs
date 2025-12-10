@@ -20,6 +20,7 @@ public class FlashlightColllision : MonoBehaviour
         {
             Debug.Log("Entered flashlight range");
             EnemyController.agent.speed = 0;
+            EnemyController.animator.speed = 0;
 
         } 
     }
@@ -30,6 +31,7 @@ public class FlashlightColllision : MonoBehaviour
         {
             Debug.Log("Exited flashlight range");
             EnemyController.agent.speed = 4;
+            EnemyController.animator.speed = 1f;
 
         }
     }

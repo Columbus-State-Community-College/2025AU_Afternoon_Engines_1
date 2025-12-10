@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour
 {
     private Transform player;
     public static NavMeshAgent agent;
+    public static Animator animator;
 
     public static bool isInLightZone = false;
     AudioManager audioManager;
@@ -15,6 +16,7 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         
     }
 
@@ -35,10 +37,12 @@ public class EnemyController : MonoBehaviour
         if (!agent.enabled) return;
 
         agent.isStopped = false;
+        animator.SetBool("Walking", true);
         agent.SetDestination(player.position);
         if (MemoryCollectiing.finalMemorycollected)
         {
             agent.speed = 8;
+            animator.speed = 2f;
            
         }
     }
@@ -48,6 +52,7 @@ public class EnemyController : MonoBehaviour
         if (!agent.enabled) return;
 
         agent.isStopped = true;
+        animator.SetBool("Walking", true);
     }
 
     private void OnTriggerEnter(Collider other)
