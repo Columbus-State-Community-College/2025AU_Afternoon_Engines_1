@@ -6,6 +6,10 @@ public class BookPickup : Interactable
     public Sprite icon;
     public GameObject holdingPrefab;
 
+    void Awake()
+    {
+        message = "Pick Up Book";
+    }
     protected override void Interact()
     {
         bool added = HotbarInventory.Instance.AddItem(icon, itemID, holdingPrefab);

@@ -4,6 +4,26 @@ using UnityEngine;
 public class DoorInteract : Interactable
 {
     public Door parentDoor;
+    public string lockedMessage = "Door is locked. You need a key.";
+    public string unlockMessage = "Unlock Door";
+
+
+    public override void OnLookEnter(InteractableUI ui)
+    {
+        HotbarSlot selectedSlot = HotbarInventory.Instance.slots[HotbarInventory.Instance.selectedSlot];
+        bool holdingKey = selectedSlot.hasItem && selectedSlot.itemID == "Key";
+
+        if (parentDoor.isLocked)
+        {
+            message = holdingKey ? unlockMessage : lockedMessage;
+        }
+        else
+        {
+            message = "";
+        }
+
+        base.OnLookEnter(ui);
+    }
 
     protected override void Interact()
     {

@@ -9,6 +9,10 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private LayerMask mask;
 
+    public InteractableUI interactableUI;
+
+    private Interactable currentInteractable;
+
     AudioManager audioManager;
 
     void Start()
@@ -20,31 +24,45 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        // Casts ray from center of screen outward, can interact with object if ray hits
-        // object on interact layer
 
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-
-        // Debug for testing ray
-        //Debug.DrawRay(ray.origin, ray.direction * distance);
-
         RaycastHit hit;
+
+        Interactable interactable = null;
+
         if (Physics.Raycast(ray, out hit, distance, mask))
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-            if (interactable != null)
+            interactable = hit.collider.GetComponent<Interactable>();
+
+        }
+            
+        if (interactable != null)
+        {
+            if (currentInteractable != interactable)
             {
-                // Put message reference (from interactable) here
+                currentInteractable?.OnLookExit(interactableUI);
+                currentInteractable = interactable;
+            }
 
-                // Left click to pick up item
-                if (Input.GetMouseButtonDown(0))
-                {
-                    interactable.BaseInteract();
-                    audioManager.PlaySFX(audioManager.itemPickup);
-                }
+            currentInteractable.OnLookEnter(interactableUI);
 
+            if (Input.GetMouseButtonDown(0))
+            {
+                interactable.BaseInteract();
+                audioManager.PlaySFX(audioManager.itemPickup);
+            }
+
+        } else
+        {
+            if (currentInteractable != null)
+            {   
+                currentInteractable.OnLookExit(interactableUI);
+                currentInteractable = null;
             }
         }
+
+
+        
 
     }
 }

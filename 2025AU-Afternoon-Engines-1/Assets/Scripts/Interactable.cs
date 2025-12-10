@@ -11,6 +11,17 @@ public abstract class Interactable : MonoBehaviour
         Interact();
     }
 
+    public virtual void OnLookEnter(InteractableUI ui)
+    {
+        ui.Show(message);
+
+    }
+
+    public virtual void OnLookExit(InteractableUI ui)
+    {
+        ui.Hide();
+    }
+
     protected virtual void Interact()
     {
 
