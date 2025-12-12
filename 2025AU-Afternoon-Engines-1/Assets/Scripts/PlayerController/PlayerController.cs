@@ -44,6 +44,9 @@ public class PlayerController : MonoBehaviour
     public float currentHealth;
     AudioManager SFX;
 
+    //Health indicator
+    public Image healthIndicator;
+
     //for switching speed
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -130,6 +133,8 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
 
         ApplyGravity();
+
+        UpdateHealthIndicator();
     }
 
     void MovePlayer()
@@ -199,6 +204,14 @@ public class PlayerController : MonoBehaviour
     {
         uiManager.ShowDeathScreen();
         
+    }
+
+    void UpdateHealthIndicator()
+    {
+        float transparerncy = 1f - (currentHealth / 100f);
+        Color color = Color.white;
+        color.a = transparerncy;
+        healthIndicator.color = color;  
     }
 
 }
