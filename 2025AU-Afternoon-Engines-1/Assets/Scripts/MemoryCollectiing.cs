@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class MemoryCollectiing : MonoBehaviour
@@ -25,9 +26,11 @@ public class MemoryCollectiing : MonoBehaviour
     [SerializeField] GameObject frontDoor; //for end game
 
     [SerializeField] MonsterSpawn spawn;
-    
+    // Memory HUD
+    [SerializeField] TextMeshProUGUI memoryHUD;
 
     public static bool finalMemorycollected= false;
+    private int currentMemories = 0;
 
 
 
@@ -74,6 +77,7 @@ public class MemoryCollectiing : MonoBehaviour
     private void Update()
     {
         checkPuzzle();
+        updateMemoryHUD();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -82,6 +86,7 @@ public class MemoryCollectiing : MonoBehaviour
             Jumpscaresound.SetActive(true);
             memory2.SetActive(true);
             Debug.Log("memory 2 has spawned");
+            currentMemories = 1;
 
         }
         if (other.CompareTag("Memory2"))
@@ -89,11 +94,13 @@ public class MemoryCollectiing : MonoBehaviour
             memory3.SetActive(true);
             glassShatter.SetActive(true);
             Debug.Log("memory 3 has spawned");
+            currentMemories = 2;
         }
         if (other.CompareTag("Memory3"))
         {
             memory4.SetActive(true);
             Debug.Log("memory 4 has spawned");
+            currentMemories = 3;
         }
         if (other.CompareTag("Memory4"))
         {
@@ -101,6 +108,7 @@ public class MemoryCollectiing : MonoBehaviour
             puzzleTrigger.SetActive(true);
             puzzleBarrier.SetActive(true);
             Debug.Log("memory 5 has spawned");
+            currentMemories = 4;
         }
         if (other.CompareTag("Memory5"))
         {
@@ -108,6 +116,7 @@ public class MemoryCollectiing : MonoBehaviour
             EndGameTrigger.SetActive(true);
             frontDoor.SetActive(true); //have the front door return
             finalMemorycollected = true;
+            currentMemories = 5;
             
          
 
@@ -145,6 +154,11 @@ public class MemoryCollectiing : MonoBehaviour
         {
             finalDialogueTrigger.SetActive(false);
         }
+    }
+
+    private void updateMemoryHUD()
+    {
+        memoryHUD.text = "Current Memories: " + currentMemories.ToString();
     }
 
     
