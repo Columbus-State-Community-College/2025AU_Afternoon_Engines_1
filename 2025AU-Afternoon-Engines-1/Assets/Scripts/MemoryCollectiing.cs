@@ -23,6 +23,7 @@ public class MemoryCollectiing : MonoBehaviour
     [SerializeField] GameObject finalDialogueTrigger;
     [SerializeField] GameObject EndGameTrigger;
     [SerializeField] GameObject puzzleBarrier;
+    [SerializeField] GameObject TVTrigger;
     [SerializeField] GameObject frontDoor; //for end game
 
     [SerializeField] MonsterSpawn spawn;
@@ -56,6 +57,7 @@ public class MemoryCollectiing : MonoBehaviour
         //set jumpscare as inactive
         Jumpscaresound.SetActive(false);
         glassShatter.SetActive(false);
+        TVTrigger.SetActive(false);
        
 
         //set puzzle trigger inactive 
@@ -93,6 +95,7 @@ public class MemoryCollectiing : MonoBehaviour
         {
             memory3.SetActive(true);
             glassShatter.SetActive(true);
+            TVTrigger.SetActive(true);
             Debug.Log("memory 3 has spawned");
             currentMemories = 2;
         }
@@ -145,6 +148,12 @@ public class MemoryCollectiing : MonoBehaviour
             puzzleCanvas.SetActive(true);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
+        }
+
+        if(other.CompareTag("TVTrigger"))
+        {
+            audioManager.PlayTVSFX();
+            Destroy(other.gameObject);
         }
     }
 

@@ -19,6 +19,7 @@ TagManager:
   - PuzzleTrigger
   - FinalDialogue
   - EndGame
+  - TVTrigger
   layers:
   - Default
   - TransparentFX

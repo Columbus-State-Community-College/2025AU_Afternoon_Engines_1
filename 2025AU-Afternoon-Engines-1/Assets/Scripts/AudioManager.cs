@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource AmbienceSource;
     public AudioSource SFXSource;
     public AudioSource JumpScareSource;
+    public AudioSource TVSource;
     public AudioMixer audioMixer;
     
    
@@ -21,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip dialougeClick;
     public AudioClip memoryPage;
     public AudioClip itemPickup;
+    public AudioClip TV;
     public AudioClip doorOpen;
     public AudioClip doorClose;
     public AudioClip finalChase;
@@ -63,6 +65,14 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip); 
+    }
+
+    public void PlayTVSFX()
+    {
+        TVSource.clip = TV;
+        TVSource.loop = true;
+        TVSource.Play();
+        
     }
 
     public void PlayJumpScare(AudioClip clip)
