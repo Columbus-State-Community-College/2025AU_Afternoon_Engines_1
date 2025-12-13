@@ -8,7 +8,9 @@ public class MainMenu : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject mainMenu;
     public GameObject creditsMenu;
+    public GameObject controlsMenu;
     public AudioMixer audioMixer;
+    
     public AudioSource SFX;
 
     private void Awake()
@@ -59,6 +61,18 @@ public class MainMenu : MonoBehaviour
 
         mainMenu.SetActive(false);
         creditsMenu.SetActive(true);
+    }
+
+    public void goToControls()
+    {
+        mainMenu.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
+
+    public void ExitControls()
+    {
+        controlsMenu.SetActive(false);
+        mainMenu.SetActive(true);
     }
     public void playSFX()
     {
