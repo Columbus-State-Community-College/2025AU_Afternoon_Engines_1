@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
     {
         AmbienceSource.clip = ambience;
 
-        //AmbienceSource.Play(); 
+        AmbienceSource.Play(); 
     }
 
     public void PlaySFX(AudioClip clip)

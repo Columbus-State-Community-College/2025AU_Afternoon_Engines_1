@@ -6,17 +6,23 @@ public class EnemyController : MonoBehaviour
     private Transform player;
     public static NavMeshAgent agent;
     public static Animator animator;
+     private MonsterSpawn spawn;
+    private bool hasteleported = false;
 
     public static bool isInLightZone = false;
     AudioManager audioManager;
-    GameObject memory5; //for final chase
+    GameObject memory5;
+    private float teleportRange = 10f;
+    //for final chase
  
 
     void Awake()
     {
         player = GameObject.Find("Player").transform;
+        spawn = GetComponent<MonsterSpawn>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+       
         
     }
 
@@ -30,6 +36,8 @@ public class EnemyController : MonoBehaviour
         {
             ChasePlayer();
         }
+
+       
     }
 
     private void ChasePlayer()
@@ -41,8 +49,17 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(player.position);
         if (MemoryCollectiing.finalMemorycollected)
         {
+            if (!hasteleported) 
+            {
+                TeleportEnemy();
+                Debug.Log("Teleported");
+               
+                hasteleported=true;
+                
+            }
             agent.speed = 8;
             animator.speed = 2f;
+            
            
         }
     }
@@ -71,6 +88,12 @@ public class EnemyController : MonoBehaviour
                 player.TakeDamage(5f);
             }
         }
+    }
+
+    private void TeleportEnemy()
+    {
+        Vector3 teleport = new Vector3(Random.Range(-teleportRange, teleportRange), 0f, Random.Range(-teleportRange, teleportRange));
+        transform.position = player.position + teleport;
     }
 
    

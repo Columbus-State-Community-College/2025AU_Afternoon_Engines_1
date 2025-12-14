@@ -30,6 +30,10 @@ public class MemoryCollectiing : MonoBehaviour
     // Memory HUD
     [SerializeField] TextMeshProUGUI memoryHUD;
 
+    //spawning
+    [SerializeField] GameObject monsterPrefab;
+
+
     public static bool finalMemorycollected= false;
     private int currentMemories = 0;
 
@@ -120,6 +124,9 @@ public class MemoryCollectiing : MonoBehaviour
             frontDoor.SetActive(true); //have the front door return
             finalMemorycollected = true;
             currentMemories = 5;
+            audioManager.PlayJumpScare(audioManager.monsterSFX);
+            
+            
             
          
 

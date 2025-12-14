@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FinalDialogue : MonoBehaviour
@@ -13,6 +14,8 @@ public class FinalDialogue : MonoBehaviour
     }
 
    
+
+
     // Update is called once per frame
     void OnTriggerStay(Collider other)
     {
@@ -57,9 +60,11 @@ public class FinalDialogue : MonoBehaviour
         }
     }
 
-   
-
     
+
+
+
+
 
 
 
