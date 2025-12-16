@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MemoryManager : MonoBehaviour
 {
+
     [Header("Memory UI")]
     public GameObject memoryPanel;
     public List<GameObject> memoryPages;
@@ -14,7 +15,7 @@ public class MemoryManager : MonoBehaviour
     private List<int> collectedIndexes = new List<int>();
     private List<GameObject> activeMemories = new List<GameObject>();
     private int currentIndex = 0;
-    public static bool popupClosed = false;
+    public static bool popupClosed = true;
     
     
     [Header("Win Screen")]

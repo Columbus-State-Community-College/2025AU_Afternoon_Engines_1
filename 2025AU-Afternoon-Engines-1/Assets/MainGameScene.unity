@@ -13839,8 +13839,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The space was cramped, the lights wrere always So brighT but yet offerred
-    a moment of peAce
+  m_text: "The space was cramped, the lights wrere alwayS so brighT but yet offerred
+    a moment of peAce. \nMom always had her nose in that yellow book, I wonder why..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf79b77174332a943adc11397e44b48d, type: 2}
   m_sharedMaterial: {fileID: -4462575234962255618, guid: cf79b77174332a943adc11397e44b48d, type: 2}
@@ -23565,6 +23565,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1858123659110282130, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: m_Size.x
+      value: 0.35933942
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858123659110282130, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858123659110282130, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: m_Size.z
+      value: 3.7837276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858123659110282130, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: m_Center.x
+      value: -0.645716
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858123659110282130, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0522674
+      objectReference: {fileID: 0}
     - target: {fileID: 1904808803470514043, guid: 23ab67f0b3450bc4faa8519843b171b8, type: 3}
       propertyPath: m_Name
       value: FinalDialogueTrigger
