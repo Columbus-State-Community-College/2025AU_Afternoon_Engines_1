@@ -206,12 +206,33 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+    }
+
     void UpdateHealthIndicator()
     {
-        float transparerncy = 1f - (currentHealth / 100f);
-        Color color = Color.white;
-        color.a = transparerncy;
-        healthIndicator.color = color;  
+        float startHealth = 80f;
+
+        if (currentHealth >= startHealth)
+        {
+            SetAlpha(0f);
+            return;
+        }
+
+        float t = Mathf.InverseLerp(startHealth, 0.5f, currentHealth);
+        float alpha = Mathf.Clamp01(t);
+
+        SetAlpha(alpha);
+ 
+    }
+
+    void SetAlpha(float alpha)
+    {
+        Color color = healthIndicator.color;
+        color.a = alpha;
+        healthIndicator.color = color;
     }
 
 }
