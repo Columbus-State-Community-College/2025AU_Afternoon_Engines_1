@@ -14,7 +14,7 @@ public class TVInteract : Interactable
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         picFramesUp = GameObject.FindGameObjectWithTag("PicFramesUp");
         picFramesDown = GameObject.FindGameObjectWithTag("PicFramesDown");
-        message = "Turn off TV";
+        message = "";
 
         picFramesUp.SetActive(true);
         picFramesDown.SetActive(false);
@@ -22,11 +22,15 @@ public class TVInteract : Interactable
 
     protected override void Interact()
     {
-        tvStatic.SetActive(false);
-        audioManager.StopTVSFX();
+        if (MemoryCollectiing.tvTriggerActive)
+        {
+            message = "";
+            tvStatic.SetActive(false);
+            audioManager.StopTVSFX();
 
-        picFramesUp.SetActive(false);
-        picFramesDown.SetActive(true);
-        audioManager.PlaySFX(audioManager.fallingFrames);
+            picFramesUp.SetActive(false);
+            picFramesDown.SetActive(true);
+            audioManager.PlaySFX(audioManager.fallingFrames);
+        }
     }
 }

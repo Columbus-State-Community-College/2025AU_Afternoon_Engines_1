@@ -23,6 +23,7 @@ TagManager:
   - TVStatic
   - PicFramesUp
   - PicFramesDown
+  - TVOffTrigger
   layers:
   - Default
   - TransparentFX
