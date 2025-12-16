@@ -8,6 +8,7 @@ public class MemoryCollectiing : MonoBehaviour
     // prevents player from running around and collecting everything at once
 
     AudioManager audioManager;
+    TVInteract TVInteract;
     [SerializeField] GameObject Jumpscaresound;
     [SerializeField] GameObject glassShatter;
 
@@ -34,6 +35,8 @@ public class MemoryCollectiing : MonoBehaviour
     //spawning
     [SerializeField] GameObject monsterPrefab;
 
+    public static bool tvTriggerActive = false;
+
 
     public static bool finalMemorycollected= false;
     private int currentMemories = 0;
@@ -48,6 +51,7 @@ public class MemoryCollectiing : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         TVStatic = GameObject.FindGameObjectWithTag("TVStatic");
+        TVInteract = GameObject.FindGameObjectWithTag("TVOffTrigger").GetComponent<TVInteract>();
         TVStatic.SetActive(false);
 
     }
@@ -164,6 +168,8 @@ public class MemoryCollectiing : MonoBehaviour
         {
             audioManager.PlayTVSFX();
             TVStatic.SetActive(true);
+            tvTriggerActive = true;
+            TVInteract.message = "Turn off TV";
             Destroy(other.gameObject);
         }
     }
