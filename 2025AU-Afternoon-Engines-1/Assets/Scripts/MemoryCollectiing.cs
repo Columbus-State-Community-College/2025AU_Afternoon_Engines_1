@@ -24,6 +24,7 @@ public class MemoryCollectiing : MonoBehaviour
     [SerializeField] GameObject EndGameTrigger;
     [SerializeField] GameObject puzzleBarrier;
     [SerializeField] GameObject TVTrigger;
+    [SerializeField] GameObject TVStatic;
     [SerializeField] GameObject frontDoor; //for end game
 
     [SerializeField] MonsterSpawn spawn;
@@ -46,6 +47,8 @@ public class MemoryCollectiing : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        TVStatic = GameObject.FindGameObjectWithTag("TVStatic");
+        TVStatic.SetActive(false);
 
     }
 
@@ -160,6 +163,7 @@ public class MemoryCollectiing : MonoBehaviour
         if(other.CompareTag("TVTrigger"))
         {
             audioManager.PlayTVSFX();
+            TVStatic.SetActive(true);
             Destroy(other.gameObject);
         }
     }

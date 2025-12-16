@@ -75,6 +75,13 @@ public class AudioManager : MonoBehaviour
         
     }
 
+    public void StopTVSFX()
+    {
+        TVSource.clip = TV;
+        TVSource.loop = false;
+        TVSource.Pause();
+    }
+
     public void PlayJumpScare(AudioClip clip)
     {
         JumpScareSource.PlayOneShot(clip);
