@@ -37,6 +37,10 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
 
+        CameraController cam = FindFirstObjectByType<CameraController>();
+        if (cam != null)
+            cam.StopFootsteps();
+
     }
 
     public void HideMenu(int menuIndex)

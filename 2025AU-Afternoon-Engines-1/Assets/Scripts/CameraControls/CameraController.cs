@@ -39,14 +39,12 @@ public class CameraController : MonoBehaviour
     void Update() 
     {
         // Disable mouse look if a menu is open
-        if (UIManager.isMenuOpen == true)
+        if (!UIManager.isMenuOpen || MemoryManager.popupClosed)
         {
-            return;
-        } else {
             MouseLook();
-            HandleHeadBob();
         }
             
+        HandleHeadBob();
     }
     public void MouseLook()
     {
@@ -70,34 +68,48 @@ public class CameraController : MonoBehaviour
         bool isMoving = (x != 0 || z != 0);
         bool isRunning = GetComponentInParent<PlayerController>().currentlyRunning;
 
-        if (isMoving)
+        if (UIManager.isMenuOpen || !MemoryManager.popupClosed || !isMoving)
         {
-            bobTimer += Time.deltaTime * (isRunning ? sprintMultiplier : 1f) * stepFrequency;
-
-            float yOffset = stepHeight * Mathf.PingPong(bobTimer, 1f) * 2f;
-            transform.localPosition = startLocalPos + new Vector3(0, yOffset, 0);
-
-            if (!footstepsPlaying && footstepClip != null)
-            {
-                footstepSource.pitch = isRunning ? sprintPitch : 1f;
-                footstepSource.Play();
-                footstepsPlaying = true;
-            }
-            else if (footstepsPlaying)
-            {
-                footstepSource.pitch = isRunning ? sprintPitch : 1f;
-            }
-        } 
-        else
-        {
-            if (footstepsPlaying)
-            {
-                footstepSource.Stop();
-                footstepsPlaying = false;
-            }
-
-            transform.localPosition = Vector3.Lerp(transform.localPosition, startLocalPos, Time.deltaTime * 5f);
-            bobTimer = 0f;
+            StopFootsteps();
+            ResetHeadBob();
+            return;
         }
+
+        bobTimer += Time.deltaTime * (isRunning ? sprintMultiplier : 1f) * stepFrequency;
+
+        float yOffset = stepHeight * Mathf.PingPong(bobTimer, 1f) * 2f;
+        transform.localPosition = startLocalPos + new Vector3(0, yOffset, 0);
+
+        if (!footstepsPlaying && footstepClip != null)
+        {
+            footstepSource.pitch = isRunning ? sprintPitch : 1f;
+            footstepSource.Play();
+            footstepsPlaying = true;
+        }
+        else if (footstepsPlaying)
+        {
+            footstepSource.pitch = isRunning ? sprintPitch : 1f;
+        }
+        
+    }
+
+    public void StopFootsteps()
+    {
+        if (footstepSource != null && footstepSource.isPlaying)
+        {
+            footstepSource.Stop();
+            footstepsPlaying = false;
+        }
+    }
+
+    void ResetHeadBob()
+    {
+        transform.localPosition = Vector3.Lerp(
+                transform.localPosition,
+                startLocalPos,
+                Time.deltaTime * 8f
+            );
+
+        bobTimer = 0f;
     }
 }

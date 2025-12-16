@@ -29,6 +29,7 @@ public class MemoryPuzzle : MonoBehaviour
             //makes memory accessible
             Time.timeScale = 1.0f;
             gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         else
@@ -46,6 +47,7 @@ public class MemoryPuzzle : MonoBehaviour
         {
             gameObject.SetActive(false);
             Time.timeScale = 1.0f;
+            Cursor.lockState = CursorLockMode.Locked;
 
 
         }
