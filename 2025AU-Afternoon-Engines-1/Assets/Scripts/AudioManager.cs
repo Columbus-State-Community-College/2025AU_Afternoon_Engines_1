@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip doorOpen;
     public AudioClip doorClose;
     public AudioClip finalChase;
+    public AudioClip fallingFrames;
 
     [Header("Jumpscare Audio")]
     public AudioClip clockSFX;
