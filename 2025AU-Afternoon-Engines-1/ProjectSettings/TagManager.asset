@@ -20,6 +20,9 @@ TagManager:
   - FinalDialogue
   - EndGame
   - TVTrigger
+  - TVStatic
+  - PicFramesUp
+  - PicFramesDown
   layers:
   - Default
   - TransparentFX

@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip doorOpen;
     public AudioClip doorClose;
     public AudioClip finalChase;
+    public AudioClip fallingFrames;
 
     [Header("Jumpscare Audio")]
     public AudioClip clockSFX;
@@ -73,6 +74,13 @@ public class AudioManager : MonoBehaviour
         TVSource.loop = true;
         TVSource.Play();
         
+    }
+
+    public void StopTVSFX()
+    {
+        TVSource.clip = TV;
+        TVSource.loop = false;
+        TVSource.Pause();
     }
 
     public void PlayJumpScare(AudioClip clip)
