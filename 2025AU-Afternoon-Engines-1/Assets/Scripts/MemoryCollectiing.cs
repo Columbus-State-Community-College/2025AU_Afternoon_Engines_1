@@ -131,7 +131,7 @@ public class MemoryCollectiing : MonoBehaviour
             frontDoor.SetActive(true); //have the front door return
             finalMemorycollected = true;
             currentMemories = 5;
-            audioManager.PlayJumpScare(audioManager.monsterSFX);
+            
             
             
             
