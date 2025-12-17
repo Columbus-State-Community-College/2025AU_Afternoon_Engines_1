@@ -17,14 +17,15 @@ public class FinalDialogue : MonoBehaviour
 
 
     // Update is called once per frame
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             if (MemoryManager.popupClosed)
             {
+                audioManager.PlaySFX(audioManager.doorClose);
                 FindFirstObjectByType<DialougeSystem>().StartDialouge(finalDialogue);
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 
 
              
@@ -52,15 +53,18 @@ public class FinalDialogue : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
-            audioManager.PlaySFX(audioManager.doorClose);
+            Destroy(gameObject);
+            audioManager.AmbienceSource.Stop();
+            audioManager.PlayJumpScare(audioManager.finalChase);
         }
     }
 
-    
+
 
 
 
