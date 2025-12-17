@@ -146,7 +146,7 @@ RectTransform:
   m_GameObject: {fileID: 50513503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5592542, y: 0.96811295, z: 0.68182}
+  m_LocalScale: {x: 1, y: 0.96811295, z: 0.68182}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295866376}
@@ -2443,10 +2443,10 @@ RectTransform:
   - {fileID: 1364401217}
   m_Father: {fileID: 2089883086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 964, y: 542}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458784280
 MonoBehaviour:
@@ -2468,8 +2468,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a12e761736050204bb997dc2bdfddb54, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3667,7 +3667,7 @@ RectTransform:
   m_GameObject: {fileID: 1168615647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5592542, y: 0.85818005, z: 0.68182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 458784278}
@@ -3699,8 +3699,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Ambience created by Robster881 on freesound.org\n\nMain Menu Music created
     by Migfus20 on freesound.org\n\nSFX:  Rudmer_Rotteveel carlerichudon10 \nRuben_Uitenweerde
-    \nadriann \ntheplax on freesound.org\n\nnewagesoup freesounds123\nyourugor freesound_community
-    mrickey13 on Pixabay\n\n\n\n"
+    \nadriann \ntheplax\nMryellowlarva on freesound.org\n\nnewagesoup freesounds123\nyourugor
+    freesound_community mrickey13 on Pixabay\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf79b77174332a943adc11397e44b48d, type: 2}
   m_sharedMaterial: {fileID: -4462575234962255618, guid: cf79b77174332a943adc11397e44b48d, type: 2}
@@ -4385,8 +4385,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a12e761736050204bb997dc2bdfddb54, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4541,7 +4541,7 @@ RectTransform:
   m_GameObject: {fileID: 1364401216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5592542, y: 1.0237675, z: 0.68182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 458784278}
@@ -4571,7 +4571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Programmers: \nAimee Prentice\nKate\nZachary Roach\n\nArtists:\nKylie
+  m_text: "Programmers: \nAimee Prentice\nKate Erhard\nZachary Roach\n\nArtists:\nKylie
     Green\nChristian Stewart,\nYunlong Zheng"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf79b77174332a943adc11397e44b48d, type: 2}
@@ -5886,8 +5886,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a12e761736050204bb997dc2bdfddb54, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
