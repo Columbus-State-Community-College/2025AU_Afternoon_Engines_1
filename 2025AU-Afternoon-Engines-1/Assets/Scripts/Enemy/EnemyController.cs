@@ -49,17 +49,8 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(player.position);
         if (MemoryCollectiing.finalMemorycollected)
         {
-            if (!hasteleported) 
-            {
-                TeleportEnemy();
-                Debug.Log("Teleported");
-               
-                hasteleported=true;
-                
-            }
             agent.speed = 8;
             animator.speed = 2f;
-            
            
         }
     }
@@ -89,15 +80,6 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
-    private void TeleportEnemy()
-    {
-        Vector3 teleport = new Vector3(Random.Range(-teleportRange, teleportRange), 0f, Random.Range(-teleportRange, teleportRange));
-        transform.position = player.position + teleport;
-    }
-
-   
-
 
 
     private void OnTriggerExit(Collider other)
