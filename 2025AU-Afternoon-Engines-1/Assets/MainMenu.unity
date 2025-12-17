@@ -3674,7 +3674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277, y: 136}
+  m_AnchoredPosition: {x: 277, y: 175.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168615649
@@ -3699,8 +3699,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Ambience created by Robster881 on freesound.org\n\nMain Menu Music created
     by Migfus20 on freesound.org\n\nSFX:  Rudmer_Rotteveel carlerichudon10 \nRuben_Uitenweerde
-    \nadriann \ntheplax\nMryellowlarva on freesound.org\n\nnewagesoup freesounds123\nyourugor
-    freesound_community mrickey13 on Pixabay\n\n\n\n"
+    \nadriann \ntheplax\nMryellowlarva on freesound.org\n\nnewagesoup\nfreesounds123\nyourugor\nfreesound_community\nmrickey13
+    \nTomas_Herudek on Pixabay\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf79b77174332a943adc11397e44b48d, type: 2}
   m_sharedMaterial: {fileID: -4462575234962255618, guid: cf79b77174332a943adc11397e44b48d, type: 2}
