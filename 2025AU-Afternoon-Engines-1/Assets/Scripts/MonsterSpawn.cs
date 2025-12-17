@@ -3,31 +3,36 @@ using UnityEngine;
 public class MonsterSpawn : MonoBehaviour
 {
     [SerializeField] GameObject monsterPrefab;
-    [SerializeField ] GameObject secondSpawn;
-    GameObject clone;
-    
+    [SerializeField] bool despawnOnMemoryCollect = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private GameObject spawnedMonster;
+    private bool hasSpawned = false;
+
+
+    private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player")) return;
+        if (hasSpawned) return;
 
+        SpawnMonster();
     }
-
-    // Update is called once per frame
-
-   
 
 
     public void SpawnMonster()
     {
-   
-         clone = Instantiate(monsterPrefab, transform.position, transform.rotation);
-        
+
+        spawnedMonster = Instantiate(monsterPrefab, transform.position, transform.rotation);
+        hasSpawned = true;
+
     }
 
-    public void TeleportMonster()
+    public void DespawnEnemy()
     {
-
-        Instantiate(monsterPrefab, secondSpawn.transform.position, secondSpawn.transform.rotation);
+        if (spawnedMonster != null)
+        {
+            Destroy(spawnedMonster);
+            spawnedMonster = null;
+            hasSpawned = false;
+        }
     }
 }

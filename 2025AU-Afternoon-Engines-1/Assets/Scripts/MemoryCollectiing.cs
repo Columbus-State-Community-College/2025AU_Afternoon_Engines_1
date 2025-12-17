@@ -105,8 +105,8 @@ public class MemoryCollectiing : MonoBehaviour
         if (other.CompareTag("Memory2"))
         {
             memory3.SetActive(true);
-            glassShatter.SetActive(true);
             TVTrigger.SetActive(true);
+            DespawnEnemy();
             Debug.Log("memory 3 has spawned");
             currentMemories = 2;
         }
@@ -119,6 +119,7 @@ public class MemoryCollectiing : MonoBehaviour
         if (other.CompareTag("Memory4"))
         {
             memory5.SetActive(true);
+            glassShatter.SetActive(true);
             puzzleTrigger.SetActive(true);
             puzzleBarrier.SetActive(true);
             Debug.Log("memory 5 has spawned");
@@ -131,11 +132,6 @@ public class MemoryCollectiing : MonoBehaviour
             frontDoor.SetActive(true); //have the front door return
             finalMemorycollected = true;
             currentMemories = 5;
-            audioManager.PlayJumpScare(audioManager.monsterSFX);
-            
-            
-            
-         
 
 
         }
@@ -154,6 +150,7 @@ public class MemoryCollectiing : MonoBehaviour
         if (other.CompareTag("GlassShatter"))
         {
             audioManager.PlayJumpScare(audioManager.glassSFX);
+            DespawnEnemy();
             Destroy(other.gameObject);
         }
 
@@ -172,6 +169,13 @@ public class MemoryCollectiing : MonoBehaviour
             TVInteract.message = "Turn off TV";
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("FinalDialogue"))
+        {
+            audioManager.PlayJumpScare(audioManager.monsterSFX);
+            spawn.SpawnMonster();
+
+        }
     }
 
     private void checkPuzzle()
@@ -187,9 +191,16 @@ public class MemoryCollectiing : MonoBehaviour
         memoryHUD.text = "Current Memories: " + currentMemories.ToString();
     }
 
-    
 
-      
-
+    void DespawnEnemy()
+    {
+        EnemyController enemy = FindFirstObjectByType<EnemyController>();
+        if (enemy != null)
+        {
+            Destroy(enemy.gameObject);
+        }
     }
+
+
+}
 

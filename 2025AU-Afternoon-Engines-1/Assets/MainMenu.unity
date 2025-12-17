@@ -4571,8 +4571,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Programmers: \nAimee Prentice\nKate\nZachary Roach\n\nArtists:\nKylie
-    Green\nChristian Stewart,\nYunlong Zheng"
+  m_text: "Programmers: \nAimee Prentice\nKate Erhard\nZachary Roach\n\nArtists:\nKylie
+    Green\nChristian Stewart\nYunlong Zheng"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf79b77174332a943adc11397e44b48d, type: 2}
   m_sharedMaterial: {fileID: -4462575234962255618, guid: cf79b77174332a943adc11397e44b48d, type: 2}

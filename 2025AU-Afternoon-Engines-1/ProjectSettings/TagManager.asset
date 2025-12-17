@@ -24,6 +24,7 @@ TagManager:
   - PicFramesUp
   - PicFramesDown
   - TVOffTrigger
+  - FinalMonsterSpawn
   layers:
   - Default
   - TransparentFX
