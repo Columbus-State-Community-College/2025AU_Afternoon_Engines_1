@@ -58,6 +58,10 @@ public class UIManager : MonoBehaviour
         ShowCursor();
         SceneManager.LoadScene("MainMenu");
         audioManager.AmbienceSource.Pause();
+        if(audioManager.JumpScareSource.isPlaying)
+        {
+            audioManager.JumpScareSource.Stop();
+        }
     }
 
     private void ShowCursor()
